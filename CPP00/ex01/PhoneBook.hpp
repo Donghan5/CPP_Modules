@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:58 by donghank          #+#    #+#             */
-/*   Updated: 2024/10/31 23:36:25 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/01 12:46:17 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ class PhoneBook {
 		void	add_contact(std::string data[5]); // put the infos in the class
 		void	display_contact(int i) const;
 		void	display_phonebook(void) const;
-}
+};
 
 # endif

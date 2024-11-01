@@ -1,10 +1,9 @@
 CC = c++
-CFLAGS = contact
-SRCS = Contact.cpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Contact
+NAME = ex01
 
-SRCS = Contact.cpp
+SRCS = Contact.cpp PhoneBook.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
