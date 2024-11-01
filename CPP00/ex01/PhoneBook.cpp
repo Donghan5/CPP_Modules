@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/01 14:43:25 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/01 20:52:30 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 	print the strings and alignment right
 */
-void	print_strs(std::string str) {
+void	print_name(std::string str) {
 	if (str.length() > 10)
 		std::cout << str.substr(0, 9) << ".";
 	else
@@ -68,5 +68,17 @@ void	PhoneBook::display_contact(int i) const {
 	to display the phonebook
 */
 void	PhoneBook::display_phonebook() const {
+	int	i = 0;
 
+	std::cout << "Index | First Name | Last Name | Nick Name" << std::endl;
+
+	while (i < this->size) {
+		std::cout << i << " | ";
+		print_name(this->contacts[i].get_firstname());
+		std::cout << " | ";
+		print_name(this->contacts[i].get_lastname());
+		std::cout << " | ";
+		print_name(this->contacts[i].get_nickname());
+		i++;
+	}
 }
