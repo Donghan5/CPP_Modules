@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:41:00 by donghank          #+#    #+#             */
-/*   Updated: 2024/10/31 23:36:36 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/02 16:07:19 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ class Contact {
 			std::string	number;
 	public:
 			// getter part
-			const std::string&	get_firstname(void) const; // read-only
-			const std::string&	get_lastname(void) const; // read-only
-			const std::string&	get_nickname(void) const; // read-only
-			const std::string&	get_secret(void) const; // read-only
-			const std::string&	get_number(void) const; // read-only
+			const std::string&	getFirstname(void) const; // read-only
+			const std::string&	getLastname(void) const; // read-only
+			const std::string&	getNickname(void) const; // read-only
+			const std::string&	getSecret(void) const; // read-only
+			const std::string&	getNumber(void) const; // read-only
 
 			// setter part
-			void				set_firstname(std::string firstname); // write-only
-			void				set_lastname(std::string lastname); // wirte-only
-			void				set_nickname(std::string nickname); // write-only
-			void				set_secret(std::string secret); // write-only
-			void				set_number(std::string number); // write-only
+			void				setFirstname(std::string firstname); // write-only
+			void				setLastname(std::string lastname); // wirte-only
+			void				setNickname(std::string nickname); // write-only
+			void				setSecret(std::string secret); // write-only
+			void				setNumber(std::string number); // write-only
 };
 
 # endif

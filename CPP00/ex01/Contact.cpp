@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:41:03 by donghank          #+#    #+#             */
-/*   Updated: 2024/10/31 21:23:23 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/02 16:07:57 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,45 +15,45 @@
 /*
 	getter part
 */
-const std::string&	Contact::get_firstname() const {
+const std::string&	Contact::getFirstname() const {
 	return (this->firstname);
 }
 
-const std::string&	Contact::get_lastname() const {
+const std::string&	Contact::getLastname() const {
 	return (this->lastname);
 }
 
-const std::string&	Contact::get_nickname() const {
+const std::string&	Contact::getNickname() const {
 	return (this->nickname);
 }
 
-const std::string&	Contact::get_secret() const {
+const std::string&	Contact::getSecret() const {
 	return (this->secret);
 }
 
-const std::string&	Contact::get_number() const {
+const std::string&	Contact::getNumber() const {
 	return (this->number);
 }
 
 /*
 	setter part
 */
-void	Contact::set_firstname(std::string firstname) {
+void	Contact::setFirstname(std::string firstname) {
 	this->firstname = firstname;
 }
 
-void	Contact::set_lastname(std::string lastname) {
+void	Contact::setLastname(std::string lastname) {
 	this->lastname = lastname;
 }
 
-void	Contact::set_nickname(std::string nickname) {
+void	Contact::setNickname(std::string nickname) {
 	this->nickname = nickname;
 }
 
-void	Contact::set_secret(std::string secret) {
+void	Contact::setSecret(std::string secret) {
 	this->secret = secret;
 }
 
-void	Contact::set_number(std::string number) {
+void	Contact::setNumber(std::string number) {
 	this->number = number;
 }

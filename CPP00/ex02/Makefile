@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = ex01
 
 # Source files
-SRCS = Contact.cpp PhoneBook.cpp main.cpp
+SRCS = tests.cpp Account.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)

@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:58 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/01 12:46:17 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/02 16:13:37 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 // prevent to apply multiple header file (same)
 # pragma once
 
+// define the error msg
+# define GETLINE_ERR "There's not an input"
+
 /* standard library */
 # include <iostream>
 # include <string>
+# include <cstdlib> // for the exit function
 # include "Contact.hpp"
 
 /* define the class */
@@ -29,10 +33,10 @@ class PhoneBook {
 		int		index;
 	public:
 		PhoneBook() : size(0), index(0) {}; // constructor
-		int		get_size(void) const; // get the size
-		void	add_contact(std::string data[5]); // put the infos in the class
-		void	display_contact(int i) const;
-		void	display_phonebook(void) const;
+		int		getSize(void) const; // get the size
+		void	addContact(std::string data[5]); // put the infos in the class
+		void	displayContact(int i) const;
+		void	displayPhonebook(void) const;
 };
 
 # endif

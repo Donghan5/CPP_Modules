@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/01 20:52:30 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/02 16:10:20 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 /*
 	print the strings and alignment right
 */
-void	print_name(std::string str) {
+void	printName(std::string str) {
 	if (str.length() > 10)
 		std::cout << str.substr(0, 9) << ".";
 	else
 	{
-		for (int j = 0; j < 10 - str.length() ; j++)
+		for (unsigned int j = 0; j < 10 - str.length() ; j++)
 			std::cout << " ";
 		std::cout << str;
 	}
@@ -29,7 +29,7 @@ void	print_name(std::string str) {
 /*
 	to calculate the size
 */
-int	PhoneBook::get_size() const {
+int	PhoneBook::getSize() const {
 	return (this->size);
 }
 
@@ -37,15 +37,15 @@ int	PhoneBook::get_size() const {
 	add the contact data[0] --> data[5]
 	each data is represent firstname lastname nickname secret and phone number
 */
-void	PhoneBook::add_contact(std::string data[5]) {
+void	PhoneBook::addContact(std::string data[5]) {
 	int	index;
 
 	index = this->index;
-	this->contacts[index].set_firstname(data[0]);
-	this->contacts[index].set_lastname(data[1]);
-	this->contacts[index].set_nickname(data[2]);
-	this->contacts[index].set_secret(data[3]);
-	this->contacts[index].set_number(data[4]);
+	this->contacts[index].setFirstname(data[0]);
+	this->contacts[index].setLastname(data[1]);
+	this->contacts[index].setNickname(data[2]);
+	this->contacts[index].setSecret(data[3]);
+	this->contacts[index].setNumber(data[4]);
 	this->index = (index + 1) % 8; // to sure the range 0 to 7
 	if (this->size < 8)
 		this->size++;
@@ -54,31 +54,32 @@ void	PhoneBook::add_contact(std::string data[5]) {
 /*
 	to disply the contact
 */
-void	PhoneBook::display_contact(int i) const {
+void	PhoneBook::displayContact(int i) const {
 	std::cout << "This is for the specified contact" << std::endl;
 
-	std::cout << "First Name: " << this->contacts[i].get_firstname() << std::endl;
-	std::cout << "Last Name: " << this->contacts[i].get_lastname() << std::endl;
-	std::cout << "Nick Name: " << this->contacts[i].get_nickname() << std::endl;
-	std::cout << "Darkest Secret: " << this->contacts[i].get_secret() << std::endl;
-	std::cout << "Phone Number: " << this->contacts[i].get_number() << std::endl;
+	std::cout << "First Name: " << this->contacts[i].getFirstname() << std::endl;
+	std::cout << "Last Name: " << this->contacts[i].getLastname() << std::endl;
+	std::cout << "Nick Name: " << this->contacts[i].getNickname() << std::endl;
+	std::cout << "Darkest Secret: " << this->contacts[i].getSecret() << std::endl;
+	std::cout << "Phone Number: " << this->contacts[i].getNumber() << std::endl;
 }
 
 /*
 	to display the phonebook
 */
-void	PhoneBook::display_phonebook() const {
+void	PhoneBook::displayPhonebook() const {
 	int	i = 0;
 
 	std::cout << "Index | First Name | Last Name | Nick Name" << std::endl;
 
 	while (i < this->size) {
 		std::cout << i << " | ";
-		print_name(this->contacts[i].get_firstname());
+		printName(this->contacts[i].getFirstname());
 		std::cout << " | ";
-		print_name(this->contacts[i].get_lastname());
+		printName(this->contacts[i].getLastname());
 		std::cout << " | ";
-		print_name(this->contacts[i].get_nickname());
+		printName(this->contacts[i].getNickname());
+		std::cout << std::endl;
 		i++;
 	}
 }
