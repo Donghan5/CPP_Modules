@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/02 17:31:43 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/03 15:17:59 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ PhoneBook::PhoneBook() {
 	std::cout << "Welcome" << std::endl;
 }
 
-PhoneBool::~PhoneBook() {
+PhoneBook::~PhoneBook() {
 	std::cout << "See ya!" << std::endl;
 }
 /*

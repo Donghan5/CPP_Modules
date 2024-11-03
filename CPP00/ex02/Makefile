@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Target executable name
-NAME = ex01
+NAME = ex02
 
 # Source files
 SRCS = tests.cpp Account.cpp

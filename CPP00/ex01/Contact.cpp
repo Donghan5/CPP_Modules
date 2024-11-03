@@ -6,11 +6,26 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:41:03 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/02 16:07:57 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/03 15:18:32 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+
+/*
+	Constructor : initialize of prepare the resources crucial
+*/
+Contact::Contact() {
+
+}
+
+/*
+	Deconstructor
+*/
+Contact::~Contact() {
+
+}
 
 /*
 	getter part
