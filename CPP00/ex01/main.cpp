@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:55:26 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/02 16:12:48 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/03 19:56:10 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	main(void) {
 				std::cout << "Please input the valid number" << std::endl;
 			} while (!isValidNumber(data[3]));
 			std::cout << "Darkest Secret: ";
-			getInput(std::cin, data[3]);
+			getInput(std::cin, data[4]);
 			phonebook.addContact(data);
 			std::cout << "\033[1;31mADD is successfully done\033[0m" << std::endl;
 		}

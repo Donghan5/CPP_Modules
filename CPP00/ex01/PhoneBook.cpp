@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/03 15:17:59 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/03 19:55:04 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	PhoneBook::addContact(std::string data[5]) {
 	this->contacts[index].setFirstname(data[0]);
 	this->contacts[index].setLastname(data[1]);
 	this->contacts[index].setNickname(data[2]);
-	this->contacts[index].setSecret(data[3]);
-	this->contacts[index].setNumber(data[4]);
+	this->contacts[index].setNumber(data[3]);
+	this->contacts[index].setSecret(data[4]);
 	this->index = (index + 1) % 8; // to sure the range 0 to 7
 	if (this->size < 8)
 		this->size++;
@@ -69,8 +69,8 @@ void	PhoneBook::displayContact(int i) const {
 	std::cout << "First Name: " << this->contacts[i].getFirstname() << std::endl;
 	std::cout << "Last Name: " << this->contacts[i].getLastname() << std::endl;
 	std::cout << "Nick Name: " << this->contacts[i].getNickname() << std::endl;
-	std::cout << "Darkest Secret: " << this->contacts[i].getSecret() << std::endl;
 	std::cout << "Phone Number: " << this->contacts[i].getNumber() << std::endl;
+	std::cout << "Darkest Secret: " << this->contacts[i].getSecret() << std::endl;
 }
 
 /*
