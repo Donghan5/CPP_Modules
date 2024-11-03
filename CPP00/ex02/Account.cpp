@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:38:10 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/03 01:54:20 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:34:11 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,20 @@ Account::~Account() {
 }
 
 void	Account::makeDeposit(int deposit) {
-	
+	int	prev_amount;
+
+	prev_amount = this->_amount; // store status actual of the deposit
+	this->_amount += deposit; // add deposit
+	this->_nbDeposits++; // update times of deposit
+	_totalAmount += deposit; // update total amount
+	_totalNbDeposits++; // update total times of deposit
+
+	_displayTimestamp();
+	std::cout << "index: " << this->_accountIndex << ";";
+	std::cout << "prev_amount: " << prev_amount << ";";
+	std::cout << "amount: " << this->_amount << ";";
+	std::cout << "deposit: " << deposit << ";";
+	std::cout << "number deposits: " << this->_nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal) {
