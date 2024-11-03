@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:38:10 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/02 17:35:04 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/03 01:54:20 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,33 @@ Account::Account(int initial_deposit) {
 	_totalAmount += initial_deposit;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
+	_displayTimestamp();
+	std::cout << "index: " << this->_accountIndex << ";";
+	std::cout << "amount: " << this->_amount << ";";
+	std::cout << "created" << std::endl;
+}
+
+/*
+	deconstructors
+*/
+Account::~Account() {
+	std::cout << "index: " << this->_accountIndex << ";";
+	std::cout << "amount" << this->_amount << ";";
+	std::cout << "closed" << std::endl;
+}
+
+void	Account::makeDeposit(int deposit) {
+	
+}
+
+bool	Account::makeWithdrawal(int withdrawal) {
+
+}
+
+int	Account::checkAmount() const {
+	return (this->_amount);
+}
+
+void	Account::displayStatus() const {
+
 }
