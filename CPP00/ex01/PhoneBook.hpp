@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:58 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/02 17:29:36 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:33:34 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class PhoneBook {
 		int		size;
 		int		index;
 	public:
-		PhoneBook(void); // constructor
-		~PhoneBook(void); //decnostructor
+		PhoneBook(); // constructor
+		~PhoneBook(); //decnostructor
 		int		getSize(void) const; // get the size
 		void	addContact(std::string data[5]); // put the infos in the class
 		void	displayContact(int i) const;

@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:41:00 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/03 19:53:23 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:33:27 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Contact {
 			std::string	number;
 	public:
 			// Constructor and deconstructor
-			Contact(void);
-			~Contact(void);
+			Contact();
+			~Contact();
 			// getter part
 			const std::string&	getFirstname(void) const; // read-only
 			const std::string&	getLastname(void) const; // read-only
