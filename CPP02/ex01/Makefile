@@ -3,10 +3,10 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Target executable name
-NAME = ex00
+NAME = ex01
 
 # Source files
-SRCS = tests.cpp Account.cpp
+SRCS = main.cpp Fixed.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)

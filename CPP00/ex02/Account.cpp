@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:38:10 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/03 15:10:00 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:15:00 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	Account::displayAccountsInfos(void) {
 }
 
 /*
-	constructors
+	constructor
 */
 Account::Account(int initial_deposit) {
 	this->_accountIndex = _nbAccounts;
@@ -100,7 +100,7 @@ Account::Account(int initial_deposit) {
 }
 
 /*
-	deconstructors
+	destructor
 */
 Account::~Account() {
 	std::cout << "index: " << this->_accountIndex << "; ";

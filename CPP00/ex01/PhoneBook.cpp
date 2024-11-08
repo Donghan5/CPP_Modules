@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/03 19:55:04 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:14:34 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ PhoneBook::PhoneBook() {
 PhoneBook::~PhoneBook() {
 	std::cout << "See ya!" << std::endl;
 }
+
 /*
 	add the contact data[0] --> data[5]
 	each data is represent firstname lastname nickname secret and phone number

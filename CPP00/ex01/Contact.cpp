@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:41:03 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/03 19:49:58 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:27:53 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Contact::Contact() {
 }
 
 /*
-	Deconstructor
+	Destructor
 */
 Contact::~Contact() {
 
@@ -29,6 +29,7 @@ Contact::~Contact() {
 
 /*
 	getter part
+	this pointer --> to access the member of the class
 */
 const std::string&	Contact::getFirstname() const {
 	return (this->firstname);

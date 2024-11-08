@@ -2,6 +2,14 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
+/*
+	The statement `HumanA bob("Bob", club);` means creating an object named `bob`
+	with the attributes and methods defined in the HumanA class.
+
+	- `bob` is an instance (object) of the HumanA class.
+	- As an instance, `bob` contains all the members (attributes and methods)
+	  defined in the HumanA class.
+*/
 int main()
 {
 	{

@@ -13,7 +13,7 @@ Fixed::Fixed() {
 */
 Fixed::Fixed(const Fixed &rightSide) {
 	std::cout << "Copy constructor called" << std::endl;
-	setRawBits(rightSide.getRawBits());
+	setRawBits(rightSide.getRawBits()); // copy
 }
 
 /*
@@ -37,8 +37,9 @@ Fixed::~Fixed() {
 
 int	Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
+	return (this->_fixedPointVal);
 }
 
 void	Fixed::setRawBits(int const raw) {
-
+	this->_fixedPointVal = raw;
 }

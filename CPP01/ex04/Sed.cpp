@@ -20,12 +20,13 @@ void	Sed::replace(std::string toFind, std::string toReplace) {
 		if (std::getline(ifs, content, '\0')) {
 			std::ofstream	ofs(this->_outFile.c_str());
 			size_t	pos = content.find(toFind);
+			// std::string::npos --> case: not found
 			while (pos != std::string::npos) {
 				content.erase(pos, toFind.length());
 				content.insert(pos, toReplace);
 				pos = content.find(toFind); // to increment the loop !!
 			}
-			ofs << content; // input stream
+			ofs << content;
 			ofs.close(); // close output stream
 		}
 		else {
