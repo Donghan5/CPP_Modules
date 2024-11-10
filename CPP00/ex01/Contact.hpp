@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:41:00 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/05 14:33:27 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/08 23:32:28 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ class Contact {
 			Contact();
 			~Contact();
 			// getter part
+			/*
+				last const meaning:
+					status object didn't chage by member func.
+					Didn't change member variable
+			*/
 			const std::string&	getFirstname(void) const; // read-only
 			const std::string&	getLastname(void) const; // read-only
 			const std::string&	getNickname(void) const; // read-only
