@@ -1,4 +1,4 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 /*
 	Call constructor
@@ -9,12 +9,13 @@
 	2. ClapTrap (parent class)
 */
 int	main(void) {
-	ScavTrap	John("John");
+	FragTrap	John("John");
 
 	John.attack("BOB");
 	John.attack("Alice");
 	John.attack("Vincent");
 	John.beRepaired(10);
-	John.guradGate();
+	John.takeDamage(10);
+	John.highFiveGuys();
 	return 0;
 }

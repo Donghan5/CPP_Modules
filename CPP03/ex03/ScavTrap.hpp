@@ -9,7 +9,7 @@
 					private --> not inheritance
 	Why we use the inheritance --> reusability of the code
 */
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 
 	public:
 		ScavTrap(void);

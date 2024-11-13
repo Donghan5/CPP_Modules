@@ -5,7 +5,7 @@ ScavTrap::ScavTrap() {
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
-	std::cout << "ScavTrap " << this->_name << " default constructor has been called." << std::endl;
+	std::cout << "ScavTrap " << this->_name << " default constructor called." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
@@ -20,11 +20,11 @@ ScavTrap::~ScavTrap() {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &rightSide): ClapTrap(rightSide) {
-	std::cout << "ScavTrap " << this->_name << " Copy consturctor has been called." << std::endl;
+	std::cout << "ScavTrap " << this->_name << " Copy consturctor called." << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &rightSide) {
-	std::cout << "ScavTrap " << this->_name << " Assignement has been called" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " Assignement called" << std::endl;
 	ClapTrap::operator=(rightSide);
 	return *this;
 }

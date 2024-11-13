@@ -14,7 +14,7 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap::ClapTrap(const ClapTrap &rightSide) {
 	*this = rightSide;
-	std::cout << "Copy constructor has been called" << std::endl;
+	std::cout << "Copy constructor is called" << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &rightSide) {
