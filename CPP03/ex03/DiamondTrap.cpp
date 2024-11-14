@@ -10,7 +10,7 @@ DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap() {
 /*
 	The reason to put _clap_name --> to verify it use in the DiamondTrap
 */
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name), ScavTrap(name), FragTrap(name) {
+DiamondTrap::DiamondTrap(std::string &name): ClapTrap(name), ScavTrap(name), FragTrap(name) {
 	this->_name = name;
 	this->ClapTrap::_name = name + "_clap_name";
 	this->_hitPoints = FragTrap::_hitPoints;
