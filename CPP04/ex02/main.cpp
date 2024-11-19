@@ -31,7 +31,7 @@
 		- Deep copy is safer for dynamic memory, as it avoids issues like dangling pointers or unintended side effects.
 		- Shallow copy is faster but can lead to problems if not managed properly.
 */
-
+// Aim of the ex02 --> know about of the abstract class which contain pure virutal function
 int main()
 {
 	//Part of Animal

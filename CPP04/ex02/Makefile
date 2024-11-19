@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
 # Target executable name
-NAME = ex01
+NAME = ex02
 
 # Source files
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongDog.cpp WrongCat.cpp Brain.cpp
