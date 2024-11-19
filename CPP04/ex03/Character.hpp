@@ -9,6 +9,7 @@ class AMateria; // forward declaration
 class Character: public ICharacter {
 	protected:
 		std::string	_name;
+		AMateria	*_inventory[4];
 	public:
 		Character();
 		Character(const std::string &name);
@@ -18,10 +19,9 @@ class Character: public ICharacter {
 		Character	&operator=(const Character &rightSide);
 		std::string const	&getName(void) const;
 		void				setName(const std::string &name);
-		virtual void		equipe(AMateria *m);
-		virtual void		unequipe(unsigned int idx);
+		virtual void		equip(AMateria *m);
+		virtual void		unequip(int idx);
 		virtual void		use(int idx, ICharacter &target);
-		int					inInventory(AMateria *m);
 };
 
 #endif

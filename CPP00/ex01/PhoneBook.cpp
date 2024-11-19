@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/07 11:14:34 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/19 23:27:28 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	PhoneBook::getSize() const {
 PhoneBook::PhoneBook() {
 	this->index = 0;
 	this->size = 0;
-	std::cout << "Welcome" << std::endl;
+	std::cout << "\033[1;31mWelcome\033[0m" << std::endl;
 }
 
 PhoneBook::~PhoneBook() {
-	std::cout << "See ya!" << std::endl;
+	std::cout << "\033[1;31mSee ya!\033[0m" << std::endl;
 }
 
 /*

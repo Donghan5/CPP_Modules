@@ -6,7 +6,7 @@ CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 NAME = ex03
 
 # Source files
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongDog.cpp WrongCat.cpp Brain.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 # Object files
 OBJS = $(SRCS:.cpp=.o)
 

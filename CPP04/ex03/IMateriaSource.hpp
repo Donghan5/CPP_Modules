@@ -4,6 +4,8 @@
 
 #include "AMateria.hpp"
 
+class AMateria; // forward declaration
+
 class IMateriaSource
 {
 	public:

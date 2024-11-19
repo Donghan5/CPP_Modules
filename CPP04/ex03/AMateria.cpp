@@ -15,6 +15,7 @@ AMateria::~AMateria() {
 
 AMateria	&AMateria::operator=(const AMateria &rightSide) {
 	this->_type = rightSide._type;
+	return (*this);
 }
 
 std::string const	&AMateria::getType(void) const {

@@ -1,10 +1,10 @@
 #include "Cure.hpp"
 
-Cure::Cure(): AMateria("Cure") {
+Cure::Cure(): AMateria("cure") {
 	// std::cout << "Default constructor has been called" << std::endl;
 }
 
-Cure::Cure(const Cure &rightSide): AMateria("Cure") {
+Cure::Cure(const Cure &rightSide): AMateria("cure") {
 	// std::cout << "Copy constructor has been called" << std::endl;
 	*this = rightSide;
 }
@@ -15,6 +15,7 @@ Cure::~Cure() {
 
 Cure	&Cure::operator=(const Cure &rightSide) {
 	this->_type = rightSide._type;
+	return (*this);
 }
 
 AMateria	*Cure::clone(void) const {
@@ -22,5 +23,5 @@ AMateria	*Cure::clone(void) const {
 }
 
 void	Cure::use(ICharacter &target) {
-	std::cout << "* heals " << target.getName() << "'s wounds" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
