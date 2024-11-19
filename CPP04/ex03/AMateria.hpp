@@ -5,9 +5,9 @@
 #include <iostream>
 #include <string>
 #include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
-class AMateria
-{
+class AMateria {
 	protected:
 		std::string	_type;
 
@@ -19,7 +19,8 @@ class AMateria
 
 		AMateria			&operator=(const AMateria &rightSide);
 		std::string const&	getType() const; //Returns the materia type
+		void				setType(std::string type);
 		virtual AMateria*	clone() const = 0;
-		virtual void 		use(ICharacter& target);
+		virtual void 		use(ICharacter& target) = 0;
 };
 #endif

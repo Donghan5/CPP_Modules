@@ -13,7 +13,7 @@ class Cure: public AMateria {
 
 		Cure	&operator=(const Cure &rightSide);
 		virtual AMateria	*clone(void) const;
-		void				use(ICharacter &target);
+		virtual void		use(ICharacter &target);
 };
 
 #endif

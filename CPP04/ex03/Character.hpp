@@ -4,6 +4,8 @@
 
 #include "ICharacter.hpp"
 
+class AMateria; // forward declaration
+
 class Character: public ICharacter {
 	protected:
 		std::string	_name;
@@ -17,7 +19,7 @@ class Character: public ICharacter {
 		std::string const	&getName(void) const;
 		void				setName(const std::string &name);
 		virtual void		equipe(AMateria *m);
-		virtual void		unequipe(in idx);
+		virtual void		unequipe(unsigned int idx);
 		virtual void		use(int idx, ICharacter &target);
 		int					inInventory(AMateria *m);
 };
