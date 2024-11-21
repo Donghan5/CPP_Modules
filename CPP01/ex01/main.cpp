@@ -6,12 +6,13 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:13:25 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:13:26 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 21:08:46 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+// this the number of the Zombie
 # define N 42
 
 int	main(void) {

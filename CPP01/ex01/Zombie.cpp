@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:13:31 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:13:32 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 21:09:46 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Zombie::Zombie(void) {
 }
 
 /*
-	deconstructor
+	destructor
 */
 Zombie::~Zombie() {
 	std::cout << "Zombie: " << this->_name << " has been destroyed" << std::endl;
@@ -33,6 +33,10 @@ void	Zombie::announce() {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
+/*
+	initialize the new Zombie name
+	also possible to use const std::string &name --> more efficient
+*/
 void	Zombie::makeZombie(std::string name) {
 	this->_name = name;
 }

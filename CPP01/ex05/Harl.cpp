@@ -6,16 +6,22 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:50 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:14:51 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/22 00:17:01 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
+/*
+	constructor
+*/
 Harl::Harl() {
 
 }
 
+/*
+	destructor
+*/
 Harl::~Harl() {
 
 }

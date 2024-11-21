@@ -6,16 +6,22 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:42 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:14:43 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/22 00:16:35 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
+/*
+	constructor: init the infile name and define outfile name
+*/
 Sed::Sed(std::string filename): _inFile(filename) {
 	this->_outFile = this->_inFile + ".replace";
 }
 
+/*
+	destructor
+*/
 Sed::~Sed(void) {
 
 }
@@ -34,8 +40,8 @@ void	Sed::replace(std::string toFind, std::string toReplace) {
 			size_t	pos = content.find(toFind);
 			// std::string::npos --> case: not found
 			while (pos != std::string::npos) {
-				content.erase(pos, toFind.length());
-				content.insert(pos, toReplace);
+				content.erase(pos, toFind.length()); // delete the element toFind
+				content.insert(pos, toReplace); // insert toReplace
 				pos = content.find(toFind); // to increment the loop !!
 			}
 			ofs << content;

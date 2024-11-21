@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:02 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:14:03 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 21:10:45 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 /*
 	reference == alias
+	the goal of the this subject is to understand the difference between pointer and reference in C++
 */
 int	main(void) {
 	std::string	str = "HI THIS IS BRAIN";

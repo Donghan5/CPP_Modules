@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:23 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:14:24 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 21:13:02 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 /*
 	constructor
+	name --> init with list
 */
 HumanB::HumanB(std::string name): _name(name) {
 	this->_weapon = NULL;
 }
 
 /*
-	deconstructor
+	destructor
 */
 HumanB::~HumanB() {
 
 }
 
 /*
-	setter
+	setter (setting the weapon of HumanB)
 */
 void	HumanB::setWeapon(Weapon &weapon) {
 	this->_weapon = &weapon;
@@ -35,6 +36,9 @@ void	HumanB::setWeapon(Weapon &weapon) {
 
 /*
 	attack function
+	In this case, HumanB --> two cases
+		1. HumanB haven't weapon
+		2. HumanB have a weapon
 */
 void	HumanB::attack() const {
 	if (this->_weapon != NULL && this->_weapon->getType() != "") {

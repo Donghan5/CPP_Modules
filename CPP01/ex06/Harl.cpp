@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:59 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:15:00 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/22 00:19:02 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	Harl::error(void) {
 	std::cout << "I want to speak to the manager now." << std::endl;
 }
 
+// note test break just in the case 3 (the rest to put in comment)
 void	Harl::complain(std::string level) {
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
