@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 20:18:19 by donghank          #+#    #+#             */
+/*   Updated: 2024/11/21 20:18:20 by donghank         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
@@ -8,7 +20,7 @@ ScavTrap::ScavTrap() {
 	std::cout << "ScavTrap " << this->_name << " default constructor has been called." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string &name): ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;

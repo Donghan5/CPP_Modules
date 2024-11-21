@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 20:21:13 by donghank          #+#    #+#             */
+/*   Updated: 2024/11/21 20:21:32 by donghank         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat(void): WrongAnimal("WrongCat") {
@@ -14,5 +26,5 @@ WrongCat::~WrongCat() {
 }
 
 void	WrongCat::makeSound(void) const {
-	std::cout << "* Barking bow wow (WrongCat) *" << std::endl;
+	std::cout << "* Meow (WrongCat) *" << std::endl;
 }

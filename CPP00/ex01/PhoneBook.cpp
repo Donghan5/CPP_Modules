@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 17:05:42 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 17:12:46 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	PhoneBook::displayContact(int i) const {
 void	PhoneBook::displayPhonebook() const {
 	int	i = 0;
 
+	// print the format (to print the information)
 	std::cout << "Index | First Name | Last Name | Nick Name" << std::endl;
 
 	while (i < this->size) {

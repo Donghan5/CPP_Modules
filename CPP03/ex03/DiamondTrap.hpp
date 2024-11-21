@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 20:19:43 by donghank          #+#    #+#             */
+/*   Updated: 2024/11/21 20:19:44 by donghank         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DIAMONDTRAP_HPP
 #define DIAMONDTRAP_HPP
 
@@ -33,7 +45,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 
 	public:
 		DiamondTrap();
-		DiamondTrap(std::string &name);
+		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap &rightSide);
 		DiamondTrap	&operator=(const DiamondTrap &rightSide);
 		~DiamondTrap();

@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 20:19:51 by donghank          #+#    #+#             */
+/*   Updated: 2024/11/21 20:19:52 by donghank         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
 	std::cout << "FragTrap " << this->_name << " default constructor called." << std::endl;
 }
 
-FragTrap::FragTrap(std::string &name): ClapTrap(name) {
+FragTrap::FragTrap(std::string name): ClapTrap(name) {
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 20;

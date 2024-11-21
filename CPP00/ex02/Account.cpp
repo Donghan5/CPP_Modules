@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:38:10 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 17:06:55 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 17:12:16 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,26 @@ void	Account::_displayTimestamp(void) {
 	struct tm	*tm_local;
 
 	time(&curr_time);
-	tm_local = localtime(&curr_time);
+	tm_local = localtime(&curr_time); // to get the times
+	// year --> in computer the criteria --> 1900
 	std::cout << "[" << (tm_local->tm_year + 1900) ;
+	// month
 	if (tm_local->tm_mon + 1 < 10)
 		std::cout << "0";
 	std::cout << (tm_local->tm_mon + 1);
+	// day
 	if (tm_local->tm_mday < 10)
 		std::cout << "0";
 	std::cout << tm_local->tm_mday << "_";
+	// hour
 	if (tm_local->tm_hour < 10)
 		std::cout << "0";
 	std::cout << tm_local->tm_hour;
+	// min
 	if (tm_local->tm_min < 10)
 		std::cout << "0";
 	std::cout << tm_local->tm_min;
+	// sec
 	if (tm_local->tm_sec < 10)
 		std::cout << "0";
 	std::cout << (tm_local->tm_sec) << "]";
@@ -95,6 +101,7 @@ Account::Account(int initial_deposit) {
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 	_displayTimestamp();
+	// print the informations
 	std::cout << "index: " << this->_accountIndex << "; ";
 	std::cout << "amount: " << this->_amount << "; ";
 	std::cout << "created" << std::endl;
@@ -122,6 +129,7 @@ void	Account::makeDeposit(int deposit) {
 	_totalAmount += deposit; // update total amount
 	_totalNbDeposits++; // update total times of deposit
 
+	// display the times
 	_displayTimestamp();
 	std::cout << "index: " << this->_accountIndex << "; ";
 	std::cout << "prev_amount: " << prev_amount << "; ";

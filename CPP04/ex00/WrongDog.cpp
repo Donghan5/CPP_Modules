@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongDog.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 20:21:44 by donghank          #+#    #+#             */
+/*   Updated: 2024/11/21 20:21:58 by donghank         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongDog.hpp"
 
 WrongDog::WrongDog(void): WrongAnimal("WrongDog") {
@@ -14,5 +26,5 @@ WrongDog::~WrongDog() {
 }
 
 void	WrongDog::makeSound(void) const {
-	std::cout << "* Meow(WrongDog sound) *" << std::endl;
+	std::cout << "* Bow wow barking (WrongDog sound) *" << std::endl;
 }

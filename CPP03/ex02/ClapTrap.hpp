@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 20:18:36 by donghank          #+#    #+#             */
+/*   Updated: 2024/11/21 20:18:37 by donghank         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 #pragma once
@@ -20,7 +32,7 @@ class ClapTrap {
 
 	public:
 		ClapTrap();
-		ClapTrap(std::string &name);
+		ClapTrap(std::string name);
 		~ClapTrap();
 		ClapTrap(const ClapTrap &rightSide);
 		ClapTrap	&operator=(const ClapTrap &rightSide);
