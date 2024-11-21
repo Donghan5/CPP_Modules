@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/19 23:27:28 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 17:05:42 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	PhoneBook::addContact(std::string data[5]) {
 
 /*
 	to disply the contact
+	After input the SEARCH keyword
 */
 void	PhoneBook::displayContact(int i) const {
 	std::cout << "This is for the specified contact" << std::endl;

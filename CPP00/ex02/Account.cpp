@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:38:10 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/07 11:15:00 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 17:06:55 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	Account::getNbWithdrawals(void) {
 /*
 	Show the timestamp of account
 	To fit the form of the timestamp
+	the form of the timestamp
 */
 void	Account::_displayTimestamp(void) {
 	time_t		curr_time;
@@ -108,6 +109,10 @@ Account::~Account() {
 	std::cout << "closed" << std::endl;
 }
 
+/*
+	to make the deposits
+	amount --> calculate
+*/
 void	Account::makeDeposit(int deposit) {
 	int	prev_amount;
 

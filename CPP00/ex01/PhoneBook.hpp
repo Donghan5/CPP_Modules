@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:02:58 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/19 23:26:04 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/21 17:02:04 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,24 @@
 // define the error msg
 # define GETLINE_ERR "There's not an input"
 
-/* standard library */
+/*
+	standard library
+*/
 # include <iostream>
 # include <string>
 # include <cstdlib> // for the exit function
 # include "Contact.hpp"
 
-/* define the class */
+/*
+	define the class
+	contact[8] --> element of the contact (datas)
+*/
 class PhoneBook {
 	private:
 		Contact contacts[8];
 		int		size;
 		int		index;
+
 	public:
 		PhoneBook(); // constructor
 		~PhoneBook(); //destructor
