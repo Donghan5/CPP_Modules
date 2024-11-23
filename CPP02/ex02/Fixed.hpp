@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:15:50 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:15:51 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/23 15:26:42 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,16 @@
 #include <string>
 #include <cmath>
 
-// define the class
+/*
+	define the class
+	Fixed value to binary
+	Three part	- sign
+				- Exponent : by using **bias** to control of the area of num
+				- Fraction or Mantissa : store decimal part
+	Converting decimal to binary --> first convert integer part
+									second, decimal multiple by 2, convert integer part
+									third, repeat this action
+*/
 class Fixed {
 	private:
 		int					_fixedPointVal;
