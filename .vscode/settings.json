@@ -104,6 +104,6 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp"
-},
-"editor.fontWeight": "normal"
+  },
+  "editor.fontWeight": "normal"
 }
