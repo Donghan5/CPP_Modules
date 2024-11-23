@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:23 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 21:13:02 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/23 15:48:48 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 */
 HumanB::HumanB(std::string name): _name(name) {
 	this->_weapon = NULL;
+	// std::cout << "Constructor of HumanB has been called" << std::endl;
 }
 
 /*
 	destructor
 */
 HumanB::~HumanB() {
-
+	// std::cout << "Destructor of HumanB has been called" << std::endl;
 }
 
 /*

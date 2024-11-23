@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:07 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 21:11:33 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/23 15:48:13 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 	More efficient
 */
 HumanA::HumanA(std::string name, Weapon &weapon): _name(name), _weapon(weapon) {
-
+	// std::cout << "Constructor of HumanA has been called" << std::endl;
 }
 
 /*
 	Destructor
 */
 HumanA::~HumanA() {
-
+	// std::cout << "Destructor of HumanA has been called" << std::endl;
 }
 
 /*

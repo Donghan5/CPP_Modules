@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:42 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/22 00:16:35 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/23 15:50:25 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 */
 Sed::Sed(std::string filename): _inFile(filename) {
 	this->_outFile = this->_inFile + ".replace";
+	// std::cout << "Constructor of Sed has been called" << std::endl;
 }
 
 /*
 	destructor
 */
 Sed::~Sed(void) {
-
+	// std::cout << "Destructor of Sed has been called" << std::endl;
 }
 
 /*

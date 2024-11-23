@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:31 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 21:13:41 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/23 15:49:40 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 */
 Weapon::Weapon(std::string type) {
 	this->setType(type);
+	// std::cout << "Constructor of the Weapon has been called" << std::endl;
 }
 
 /*
 	Destructor
 */
 Weapon::~Weapon() {
-
+	// std::cout << "Destructor of the Weapon has been called" << std::endl;
 }
 
 /*

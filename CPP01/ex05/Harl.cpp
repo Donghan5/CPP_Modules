@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:50 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/22 00:17:01 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/23 15:51:05 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 	constructor
 */
 Harl::Harl() {
-
+	// std::cout << "Constructor of Harl has been called" << std::endl;
 }
 
 /*
 	destructor
 */
 Harl::~Harl() {
-
+	// std::cout << "Destructor of Harl has been called" << std::endl;
 }
 
 void	Harl::debug(void) {
