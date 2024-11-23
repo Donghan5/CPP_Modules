@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:14:59 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/22 00:19:02 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/23 11:25:09 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,11 @@ void	Harl::error(void) {
 	std::cout << "I want to speak to the manager now." << std::endl;
 }
 
-// note test break just in the case 3 (the rest to put in comment)
+/*
+	why I put break just in case 3
+		==> subject want to display all message from this level and above
+	break --> if the condition is the case --> do and exit the loop
+*/
 void	Harl::complain(std::string level) {
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
@@ -65,13 +69,10 @@ void	Harl::complain(std::string level) {
 	switch (i) {
 		case 0:
 			this->debug();
-			break ;
 		case 1:
 			this->info();
-			break ;
 		case 2:
 			this->warning();
-			break ;
 		case 3:
 			this->error();
 			break ;
