@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:20:01 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:20:02 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:07:49 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int	main(void) {
 	John.takeDamage(10);
 	John.guradGate();
 	John.highFiveGuys();
+	John.whoAmI();
 	return 0;
 }

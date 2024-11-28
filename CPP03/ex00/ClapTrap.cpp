@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:16:28 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:17:13 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:36:03 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,24 @@ ClapTrap::ClapTrap(const ClapTrap &rightSide) {
 	*this = rightSide;
 }
 
+/*
+	@param
+		rightSide = copy object
+*/
 ClapTrap	&ClapTrap::operator=(const ClapTrap &rightSide) {
-	this->_name = rightSide._name;
-	this->_hitPoints = rightSide._hitPoints;
-	this->_energyPoints = rightSide._energyPoints;
-	this->_attackDamage = rightSide._attackDamage;
+	if (this != &rightSide) {
+		this->_name = rightSide._name;
+		this->_hitPoints = rightSide._hitPoints;
+		this->_energyPoints = rightSide._energyPoints;
+		this->_attackDamage = rightSide._attackDamage;
+	}
 	return *this;
 }
 
+/*
+	@param
+		target: target person
+*/
 void	ClapTrap::attack(const std::string &target) {
 	if (_energyPoints <= 0) {
 		std::cout << _name << " have no more energy" << std::endl;
@@ -46,6 +56,10 @@ void	ClapTrap::attack(const std::string &target) {
 	_energyPoints -= 1;
 }
 
+/*
+	@param
+		amount: amount of the damage
+*/
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (_hitPoints <= amount) {
 		std::cout << "ClapTrap " << _name << " is dead!" << std::endl;
@@ -57,6 +71,8 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 /*
 	reparing cost is 1 energy point
+	@param
+		amount: reparing amount
 */
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (_energyPoints <= 0) {

@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:16:12 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:16:13 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:45:40 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed::Fixed(): _fixedPointVal(0) {
 
 /*
 	int constructor
-	to convert fixed point value --> by doing shift by fraactional bits
+	to convert fixed point value --> by doing shift by fractional bits
 */
 Fixed::Fixed(const int n): _fixedPointVal(n << _fractionalBits) {
 	// std::cout << "Int constructor called" << std::endl;

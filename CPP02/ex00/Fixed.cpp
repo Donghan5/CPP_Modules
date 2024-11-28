@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:15:19 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:15:20 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:38:03 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
+/*
+	to get the fixed point value
+*/
 int	Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedPointVal);

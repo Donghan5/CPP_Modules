@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:16:07 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:16:08 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:45:28 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,29 @@
 		    (P)
 */
 
+/*
+	Implement ABS
+	@param
+		Fixed x: want to convert absolute number
+	@return
+		x: Fixed value converted to absolute number
+*/
 static Fixed	myAbs(Fixed x) {
 	if (x < Fixed(0))
 		return x * Fixed(-1);
 	return (x);
 }
 
+/*
+	to doing calculation Cross product
+	@param
+		a: first point of triangle
+		b: second point of triangle
+		c: third point of triangle
+		area: area of the triangle
+	@return
+		area: area of the whole triangle
+*/
 static Fixed	verifyArea(Point const a, Point const b, Point const c) {
 	float	area;
 
@@ -59,6 +76,17 @@ static Fixed	verifyArea(Point const a, Point const b, Point const c) {
 	return (area);
 }
 
+/*
+	calculation of bsp
+	@param
+		a: first point of triangle
+		b: second point of triangle
+		c: third point of triangle
+		point: unknown point (possible outside or inside of triangle)
+	@return
+		success: area of triangle abc
+		fail: not sams as area of triangle abc
+*/
 bool	bsp(Point const a, Point const b, Point const c, Point const point) {
 	Fixed	abc = myAbs(verifyArea(a, b, c));
 	Fixed	abp = myAbs(verifyArea(a, b, point));

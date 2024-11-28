@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:15:35 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/23 15:26:34 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:39:39 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 	Three part	- sign
 				- Exponent : by using **bias** to control of the area of num
 				- Fraction or Mantissa : store decimal part
-	Converting decimal to binary --> first convert integer part
-									second, decimal multiple by 2, convert integer part
-									third, repeat this action
+	Converting decimal to binary --> 1. convert integer part
+									 2. decimal multiple by 2, convert integer part
+									 3. repeat this action
 */
 class Fixed {
 	private:
