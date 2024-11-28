@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:20:01 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/28 13:07:49 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:12:21 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 */
 int	main(void) {
 	DiamondTrap	John("John");
+	DiamondTrap	Cole("Cole");
 
 	John.attack("BOB");
 	John.attack("Alice");
@@ -33,5 +34,9 @@ int	main(void) {
 	John.guradGate();
 	John.highFiveGuys();
 	John.whoAmI();
+
+	// Just to check assigning operator
+	// std::cout << "Assigning Cole to John" << std::endl;
+	// John = Cole;
 	return 0;
 }

@@ -6,24 +6,38 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:16:28 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/28 13:36:03 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:02:02 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+/*
+	default constructor
+*/
 ClapTrap::ClapTrap(): _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "ClapTrap" << _name << " default constructor created" << std::endl;
 }
 
+/*
+	Type constructor
+*/
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "ClapTrap " << _name << " constructed" << std::endl;
 }
 
+/*
+	destructor
+*/
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap " << _name << " destructed." << std::endl;
 }
 
+/*
+	copy constructor
+	@param
+		rightSide: copy object
+*/
 ClapTrap::ClapTrap(const ClapTrap &rightSide) {
 	std::cout << "Copy constructor is called" << std::endl;
 	*this = rightSide;
