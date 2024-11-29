@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:16:07 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/28 12:45:28 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/29 13:52:12 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ static Fixed	verifyArea(Point const a, Point const b, Point const c) {
 }
 
 /*
+	note: have to add the 0 cases the areas
 	calculation of bsp
 	@param
 		a: first point of triangle
