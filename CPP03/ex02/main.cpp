@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:18:53 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/28 18:11:14 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/30 12:58:14 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,19 @@
 */
 int	main(void) {
 	FragTrap	John("John");
+	// FragTrap	Nick("Nick");
 	// FragTrap	Cole("Cole");
 
 	John.attack("BOB");
 	John.attack("Alice");
 	John.attack("Vincent");
-	John.beRepaired(10);
-	John.takeDamage(10);
 	John.highFiveGuys();
+
+	// Nick part
+	// Nick.attack("BOB");
+	// Nick.attack("Alice");
+	// Nick.attack("Vincent");
+	// Nick.highFiveGuys();
 
 	// just to check assigning operator
 	// std::cout << "Assigning Cole to John" << std::endl;

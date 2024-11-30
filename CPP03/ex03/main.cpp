@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:20:01 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/28 18:12:21 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:47:33 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@
 	1. DiamondTrap
 	2. ScavTrap / FragTrap
 	3. ClapTrap (parent class)
+
+	note: The output name (John_clap_name) is applied according to the parent class name change rule (adding _clap_name)
 */
 int	main(void) {
 	DiamondTrap	John("John");
-	DiamondTrap	Cole("Cole");
+	// DiamondTrap	Nick("Nick");
+	// DiamondTrap	Cole("Cole");
 
 	John.attack("BOB");
 	John.attack("Alice");
@@ -34,6 +37,16 @@ int	main(void) {
 	John.guradGate();
 	John.highFiveGuys();
 	John.whoAmI();
+
+	// Nick part
+	// Nick.attack("BOB");
+	// Nick.attack("Alice");
+	// Nick.attack("Vincent");
+	// Nick.beRepaired(10);
+	// Nick.takeDamage(10);
+	// Nick.guradGate();
+	// Nick.highFiveGuys();
+	// Nick.whoAmI();
 
 	// Just to check assigning operator
 	// std::cout << "Assigning Cole to John" << std::endl;

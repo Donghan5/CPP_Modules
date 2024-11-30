@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:17:30 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/28 18:07:58 by donghank         ###   ########.fr       */
+/*   Updated: 2024/11/30 12:57:26 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,19 @@
 */
 int	main(void) {
 	ScavTrap	John("John");
+	// ScavTrap	Nick("Nick");
 	// ScavTrap	Cole("Cole");
 
 	John.attack("BOB");
 	John.attack("Alice");
 	John.attack("Vincent");
-	John.beRepaired(10);
 	John.guradGate();
+
+	// Nick part
+	// Nick.attack("BOB");
+	// Nick.attack("Alice");
+	// Nick.attack("Vincent");
+	// Nick.guradGate();
 
 	// just check assigning operator
 	// std::cout << "Assigning Cole to John..." << std::endl;
