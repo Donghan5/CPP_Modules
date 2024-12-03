@@ -6,12 +6,15 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:19:35 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/28 13:33:38 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:24:51 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
+/*
+	Default constructor
+*/
 DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap() {
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
@@ -20,7 +23,7 @@ DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap() {
 }
 
 /*
-	The reason to put _clap_name --> to verify it use in the DiamondTrap
+	The reason to put _clap_name --> to verify ClapTrap and DiamondTrap
 	@param
 		name: name of DiamondTrap object
 */
