@@ -6,12 +6,15 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:23:53 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:23:54 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/06 20:51:50 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
+/*
+	Default constructor
+*/
 Character::Character(): _name("Default") {
 	std::cout << "Default constructor has been called" << std::endl;
 	for (int i = 0; i < 4; i++) {
@@ -20,6 +23,11 @@ Character::Character(): _name("Default") {
 	// std::cout << "Character " << this->_name << " constructor has been called" << std::endl;
 }
 
+/*
+	Type constructor
+	@param
+		name: name of the character
+*/
 Character::Character(const std::string &name): _name(name) {
 	// std::cout << "Type constructor of the Character has been called." << std::endl;
 	for (int i = 0; i < 4; i++) {
@@ -28,11 +36,19 @@ Character::Character(const std::string &name): _name(name) {
 	// std::cout << "Character " << this->_name << " constructor has been called" << std::endl;
 }
 
+/*
+	Copy constructor
+	@param
+		rightSide: copy obj
+*/
 Character::Character(const Character &rightSide) {
 	// std::cout << "Copy-constructor has been called" << std::endl;
 	*this = rightSide;
 }
 
+/*
+	Destructor
+*/
 Character::~Character() {
 	// std::cout << "Destructor of the Character has been called." << std::endl;
 	for (int i = 0; i < 4; i++) {
@@ -41,6 +57,11 @@ Character::~Character() {
 	}
 }
 
+/*
+	Copy assigngment
+	@param
+		rightSide: 
+*/
 Character	&Character::operator=(const Character &rightSide) {
 	if (this != &rightSide) {
 		this->_name = rightSide._name;

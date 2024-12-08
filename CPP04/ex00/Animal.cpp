@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:20:30 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/30 16:50:34 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:13:59 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ Animal::Animal(const Animal &rightSide) {
 	Copy assignement
 	@param
 		rightSide: copy obj
+	@return
+		this: self-pointer of the class
 */
 Animal	&Animal::operator=(const Animal &rightSide) {
 	this->type = rightSide.getType();

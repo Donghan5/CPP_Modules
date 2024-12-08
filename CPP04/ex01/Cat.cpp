@@ -6,12 +6,15 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:22:18 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:22:19 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:33:01 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
+/*
+	Default constructor of Cat
+*/
 Cat::Cat(void): Animal("Cat") {
 	std::cout << "Default constructor of " << this->type << " has been called." << std::endl;
 	try {
@@ -22,15 +25,31 @@ Cat::Cat(void): Animal("Cat") {
 	}
 }
 
+/*
+	Copy assignement
+		@param
+			rightSide: copy objs
+*/
 Cat::Cat(const Cat &rightSide): Animal(rightSide), _brain(new Brain(*rightSide._brain)) {
 	std::cout << "Copy constructor of " << this->type << " has been called." << std::endl;
 }
 
+/*
+	Destructor
+*/
 Cat::~Cat(void) {
 	std::cout << "Destructor of " << this->type << " has been called." << std::endl;
 	delete _brain;
 }
 
+/*
+	Copy assignement
+	@param
+		rightSide: copy objs
+		other: copy objs (temporary)
+	@return
+		this: self-pointer of the class
+*/
 Animal	&Cat::operator=(const Animal &rightSide) {
 	const Cat	*other;
 
@@ -47,10 +66,18 @@ Animal	&Cat::operator=(const Animal &rightSide) {
 	return (*this);
 }
 
+/*
+	required function
+*/
 void	Cat::makeSound(void) const {
 	std::cout << " * Meow~~~ * " << std::endl;
 }
 
+/*
+	getter
+	@return
+		this->_brain: brain of the class
+*/
 Brain	*Cat::getBrain(void) const {
 	return (this->_brain);
 }

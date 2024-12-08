@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:22:33 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:22:34 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:52:35 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int main()
 	std::cout << "\n---- CHECK MEMORY ASSIGNEMENT ----" << std::endl;
 	std::cout << "Brain pointer of animal[5]: " << animal[5]->getBrain() << std::endl;
 	std::cout << "Brain pointer of animal[7]: " << animal[7]->getBrain() << std::endl;
+	std::cout << "If Memory is different, the copy action is successfully done" << std::endl;
 	std::cout << "------ END AND CONTINUE ------" << std::endl;
 
 	std::cout << "\n-------- MODE CHECK----------" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:20:45 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/30 16:55:28 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:08:28 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ Dog::Dog(void): Animal("Dog") {
 
 /*
 	copy constructor
+	@param
+		rightSide: copy objs
 */
 Dog::Dog(const Dog &rightSide): Animal(rightSide) {
 	std::cout << "Copy assignement of " << this->type << " has been called." << std::endl;
