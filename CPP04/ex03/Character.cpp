@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:23:53 by donghank          #+#    #+#             */
-/*   Updated: 2024/12/06 20:51:50 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:52:54 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Character::~Character() {
 /*
 	Copy assigngment
 	@param
-		rightSide: 
+		rightSide:
 */
 Character	&Character::operator=(const Character &rightSide) {
 	if (this != &rightSide) {
@@ -93,7 +93,7 @@ void	Character::equip(AMateria *m) {
 
 void	Character::unequip(int idx) {
 	if (this->_inventory[idx]) {
-		delete this->_inventory[idx];
+		// delete this->_inventory[idx];
 		this->_inventory[idx] = NULL;
 	}
 	else {
