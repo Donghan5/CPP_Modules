@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:20:30 by donghank          #+#    #+#             */
-/*   Updated: 2024/12/06 15:13:59 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/10 12:23:23 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ Animal::~Animal() {
 
 /*
 	getter
+	@return
+		this->type: type od the Animal
 */
 const std::string	&Animal::getType(void) const {
 	return(this->type);

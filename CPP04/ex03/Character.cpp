@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:23:53 by donghank          #+#    #+#             */
-/*   Updated: 2024/12/09 13:52:54 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/10 12:45:16 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,8 @@ void	Character::equip(AMateria *m) {
 			// std::cout << "Character " << this->_name << " equiped" << std::endl;
 			return ;
 		}
-		std::cout << "Character " << this->_name << " can't equiped" << std::endl;
 	}
+	std::cout << "Character " << this->_name << " can't equiped" << std::endl;
 }
 
 void	Character::unequip(int idx) {

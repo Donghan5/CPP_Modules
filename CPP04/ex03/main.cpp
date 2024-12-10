@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:24:20 by donghank          #+#    #+#             */
-/*   Updated: 2024/12/09 13:53:21 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/10 12:47:02 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int main()
 	me->use(1, *bob);
 	me->unequip(0);
 	me->unequip(1);
-	std::cout << "Cure left: " << cure->getType() << "; Ice left: " << ice->getType() << std::endl;
+	// std::cout << "------- This is to check unequipe is worked well should not delete cure and ice -------" << std::endl;
+	// std::cout << "Cure left: " << cure->getType() << "; Ice left: " << ice->getType() << std::endl;
 	delete ice;
 	delete cure;
 	delete bob;

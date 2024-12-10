@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:21:07 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/30 16:56:22 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/10 12:30:52 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ WrongAnimal::WrongAnimal(const WrongAnimal &rightSide) {
 	Copy assignement
 	@param
 		rightSide: copy obj
+	@return
+		this: self-pointer
 */
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &rightSide) {
 	this->type = rightSide.getType();
@@ -58,6 +60,8 @@ WrongAnimal::~WrongAnimal() {
 
 /*
 	getter
+	@return
+		this->type: type of animal
 */
 const std::string	&WrongAnimal::getType(void) const {
 	return (this->type);

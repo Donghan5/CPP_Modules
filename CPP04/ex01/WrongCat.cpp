@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:22:42 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:22:43 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/10 12:31:35 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ WrongCat::WrongCat(void): WrongAnimal("WrongCat") {
 
 WrongCat::WrongCat(const WrongCat &rightSide): WrongAnimal(rightSide) {
 	std::cout << "Copy Constructor of " << this->type << " has been called." << std::endl;
-	*this = rightSide;
 }
 
 WrongCat::~WrongCat() {
