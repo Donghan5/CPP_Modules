@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:22:55 by donghank          #+#    #+#             */
-/*   Updated: 2024/11/21 20:22:56 by donghank         ###   ########.fr       */
+/*   Updated: 2024/12/11 14:13:37 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,4 @@ const std::string	&Animal::getType(void) const {
 
 void	Animal::setType(const std::string &type) {
 	this->type = type;
-}
-
-void	Animal::makeSound(void) const {
-	std::cout << " * Animal sound * " << std::endl;
 }
