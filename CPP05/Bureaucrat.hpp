@@ -3,27 +3,31 @@
 #pragma once
 
 #include <iostream>
+#include <exception>
+#include <string>
 
-class BureauCrat {
+class Bureaucrat {
 	private:
 		const std::string	_name;
 		int					_grade;
+		static const int	maxGrade = 1;
+		static const int	minGrade = 150;
 	public:
 		// constructor and desturctor
-		BureauCrat();
-		BureauCrat(const std::string &name, int grade);
-		BureauCrat(const BureauCrat &rightSide);
-		~BureauCrat();
+		Bureaucrat();
+		Bureaucrat(const std::string &name, int grade);
+		Bureaucrat(const Bureaucrat &rightSide);
+		~Bureaucrat();
 
-		BureauCrat	&operator=(const BureauCrat &rightSide);
+		Bureaucrat	&operator=(const Bureaucrat &rightSide);
 
 		// Member function
 		void	incrementGrade(void);
 		void	decrementGrade(void);
 
 		// getter
-		const std::string	&getName(void);
-		int					getGrade(void);
+		const std::string	&getName(void) const;
+		int					getGrade(void) const;
 
 		// Exception
 		class GradeTooHighException: public std::exception {
@@ -37,6 +41,6 @@ class BureauCrat {
 		};
 };
 
-std::ostream	&operator<<(std::ostream &str, BureauCrat const &bureauCrat);
+std::ostream	&operator<<(std::ostream &str, Bureaucrat const &bureaucrat);
 
 #endif

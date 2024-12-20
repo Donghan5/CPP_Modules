@@ -3,12 +3,12 @@
 void	incrementTest()
 {
 	try {
-		BureauCrat	bureauCrat("John", 1);
+		Bureaucrat	bureauCrat("John", 1);
 
 		std::cout << bureauCrat << std::endl;
 		bureauCrat.incrementGrade();
 	}
-	catch (BureauCrat::GradeTooLowException &e) {
+	catch (Bureaucrat::GradeTooLowException &e) {
 		std::cout << e.what() << std::endl;
 	}
 }
@@ -16,12 +16,12 @@ void	incrementTest()
 void	decrementTest()
 {
 	try {
-		BureauCrat bureauCrat("Bob", 150);
+		Bureaucrat bureauCrat("Bob", 150);
 
 		std::cout << bureauCrat << std::endl;
 		bureauCrat.decrementGrade();
 	}
-	catch (BureauCrat::GradeTooHighException &e) {
+	catch (Bureaucrat::GradeTooHighException &e) {
 		std::cout << e.what() << std::endl;
 	}
 }
