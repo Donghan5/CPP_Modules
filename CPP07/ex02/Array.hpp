@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:22:00 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/11 01:00:41 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/11 14:15:57 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #pragma once
 
 #include <iostream>
+#include <string>
+#include <cstdlib>
 
 /*
 	template class
@@ -49,7 +51,14 @@ class Array {
 			return *this;
 		}
 
-		T	&operator[](unsigned int i) const;
+		// treat index
+		T	&operator[](unsigned int i) const {
+			if (i < 0 || i >= _size) {
+				throw OutOfBoundException();
+			}
+			return _arr[i];
+		}
+
 		unsigned int	size(void) const { return this->_size; };
 
 		// Exception
