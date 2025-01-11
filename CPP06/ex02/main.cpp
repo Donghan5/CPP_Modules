@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:22:27 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/07 00:03:48 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/10 14:48:37 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #include "B.hpp"
 #include "C.hpp"
 
+/*
+	generate the class A, B and C
+*/
 Base *generate(void) {
 	int ranGen = rand() % 3;
 
@@ -30,6 +33,10 @@ Base *generate(void) {
 	}
 }
 
+/*
+	pointer identifier
+	dynamic_cast --> upcasting and downcasting (between parent class and child class)
+*/
 void identify(Base* p) {
 	if (dynamic_cast<A* >(p))
 		std::cout << "A" << std::endl;
@@ -39,6 +46,9 @@ void identify(Base* p) {
 		std::cout << "C" << std::endl;
 }
 
+/*
+	reference identifier
+*/
 void identify(Base& p) {
 	Base base;
 	try {

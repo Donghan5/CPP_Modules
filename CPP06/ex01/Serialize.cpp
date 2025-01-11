@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 22:57:13 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/05 23:13:17 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/10 14:46:13 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ Serializer	&Serializer::operator=(const Serializer &rhs) {
 	return *this;
 }
 
+/*
+	reinterpret_cast
+		change pointer type
+		change between int and pointer
+		reinterpret the bit
+*/
 uintptr_t	Serializer::serialize(Data* ptr) {
 	return reinterpret_cast<uintptr_t>(ptr);
 }

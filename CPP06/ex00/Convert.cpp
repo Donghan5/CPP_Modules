@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimdonghan <kimdonghan@student.42.fr>      +#+  +:+       +#+        */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 12:39:56 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/04 16:56:58 by kimdonghan       ###   ########.fr       */
+/*   Updated: 2025/01/10 14:42:44 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ const char	*ScalarConverter::ConvertUnknownExceptions::what(void) const throw() 
 
 /*
 	Constructor and destructor with copy assignement
-	don't forget to reset the boolean value
 */
 ScalarConverter::ScalarConverter() {
 	std::cout << "Default constructor ScalarConverter has been called" << std::endl;
@@ -124,7 +123,6 @@ void	ScalarConverter::setType(void) {
 /*
 	bool functions
 */
-
 /*
 	verify int value
 	@return
