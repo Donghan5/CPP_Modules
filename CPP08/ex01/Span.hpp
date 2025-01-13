@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:06:19 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/12 23:58:38 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:38:40 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,26 @@ class Span {
 
 		Span &operator=(const Span &rhs);
 
-		void addNumber(void);
+		int	sizeSpan(void) const;
+		int capacitySpan(void) const;
+		void addNumber(unsigned int N);
 		int shortestSpan(void) const;
 		int longestSpan(void) const;
-
 		//Exception
 		class alreadyExistException: public std::exception {
 			public:
-				virtual const char *what() const throw { return "Element already exist"; }
+				const char *what() const throw();
 		};
 
-		class notFoundException: public std::exception {
+		class noMoreSpaceException: public std::exception {
 			public:
-				virtual const char *what() const throw { return "Element Not Found"; }
+				const char *what() const throw();
 		};
 
-		// shoule I need it ?
-		class noSpanException: public std::exception {
+		class notEnoughSpaceException: public std::exception {
 			public:
-				virtual const char *what() const throw { return "There's no span"; }
-		};
+				const char *what() const throw();
+		}
 };
 
 #endif
