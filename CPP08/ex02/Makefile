@@ -3,10 +3,10 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Target executable name
-NAME = ex01
+NAME = ex02
 
 # Source files
-SRCS = main.cpp Span.cpp
+SRCS = main.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)

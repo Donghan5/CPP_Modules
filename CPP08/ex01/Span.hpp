@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:06:19 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/13 12:38:40 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:08:02 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <ctime>
 
 /*
 	Why I chose the vector?
@@ -44,20 +45,20 @@ class Span {
 		int shortestSpan(void) const;
 		int longestSpan(void) const;
 		//Exception
-		class alreadyExistException: public std::exception {
+		class AlreadyExistException: public std::exception {
 			public:
-				const char *what() const throw();
+				virtual const char *what() const throw();
 		};
 
-		class noMoreSpaceException: public std::exception {
+		class NoMoreSpaceException: public std::exception {
 			public:
-				const char *what() const throw();
+				virtual const char *what() const throw();
 		};
 
-		class notEnoughSpaceException: public std::exception {
+		class NotEnoughSpaceException: public std::exception {
 			public:
-				const char *what() const throw();
-		}
+				virtual const char *what() const throw();
+		};
 };
 
 #endif

@@ -3,10 +3,10 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Target executable name
-NAME = ex01
+NAME = btc
 
 # Source files
-SRCS = main.cpp Span.cpp
+SRCS = main.cpp BitcoinExchange.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
