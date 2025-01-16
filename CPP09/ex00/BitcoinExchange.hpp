@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimdonghan <kimdonghan@student.42.fr>      +#+  +:+       +#+        */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:37:57 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/16 00:03:13 by kimdonghan       ###   ########.fr       */
+/*   Updated: 2025/01/16 12:43:36 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Btc {
 
 		// check input integrity and read
 		bool checkDate(std::string infoDate);
-		bool checkValue(std::string infoVal)
+		bool checkValue(std::string infoVal);
 		bool checkValidity(std::string infoDate, std::string infoVal);
 		void parseData(std::string infoLine);
 		void readInput(std::string inputPath); // input.txt
@@ -53,7 +53,7 @@ class Btc {
 		//Exception
 		class FileOpenErrException: public std::exception {
 			virtual const char *what(void) const throw();
-		}
+		};
 
 };
 
