@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:38:00 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/16 12:47:34 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/16 23:47:10 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ const char *Btc::FileOpenErrException::what() const throw() {
 }
 
 void	Btc::setData(std::string date, float value) {
-	this->data.insert(map::make_pair(date, value));
+	this->data.insert(std::make_pair(date, value));
 }
 
 /*
 	static function to erase left white spaces
 */
-static std::string	&eraseLeftSpaces(std::string str) {
+static std::string	&eraseLeftSpaces(std::string &str) {
 	str.erase(0, str.find_first_not_of(WHITESPACE));
 	return str;
 }
@@ -34,7 +34,7 @@ static std::string	&eraseLeftSpaces(std::string str) {
 /*
 	static function to erase right white spaces
 */
-static std::string	&eraseRightSpaces(std::string str) {
+static std::string	&eraseRightSpaces(std::string &str) {
 	str.erase(str.find_last_not_of(WHITESPACE) + 1);
 	return str;
 }
@@ -50,35 +50,36 @@ std::string	Btc::normalizeLine(std::string line) {
 	return eraseLeftSpaces(eraseRightSpaces(line));
 }
 
-std::map<std::string, float> getData() {
+std::map<std::string, float> Btc::getData() {
 	return this->data;
 }
 
 // loading data.csv file
 void	Btc::loadDataFromFile() {
 	int	lineNum = 0;
-	std::ifstream file("data.csv".c_str());
+	std::ifstream file("data.csv");
 	if (!file.is_open()) {
 		throw FileOpenErrException();
 	}
 	std::string line;
 	while (std::getline(file, line)) {
-		if (lineNum = 0) {
+		if (lineNum == 0) {
 			lineNum = 1;
 			continue ;
 		}
 		size_t pos = line.find(',');
-		if (pos = std::string::npos) {
+		if (pos == std::string::npos) {
 			std::cerr << "Invalid Format" << std::endl;
 			continue;
 		}
 		std::string data = line.substr(0, pos);
 		float value;
 		try {
-			value = std::atof(line.substr(pos + 1));
+			value = std::atof(line.substr(pos + 1).c_str());
 		} catch (std::exception &a) {
 			(void)a;
 			std::cerr << "Error: Could not parse value" << std::endl;
+			continue ;
 		}
 		this->setData(data, value);
 	}
@@ -109,6 +110,7 @@ Btc	&Btc::operator=(const Btc &rhs) {
 		this->data = rhs.data;
 		this->readFlag = rhs.readFlag;
 	}
+	return *this;
 }
 
 /*
@@ -140,39 +142,40 @@ std::vector<std::string> Btc::splitStr(std::string str, char limit) {
 	boolean to check the date
 */
 bool	Btc::checkDate(std::string infoDate) {
-	std::vector<std::strging> dates = splitStr(infoDate, '-');
+	std::vector<std::string> dates = splitStr(infoDate, '-');
 	int year, month, day;
 	try {
-		year = std::atoi(dates[0]);
-		month = std::atoi(dates[1]);
-		day = std::atoi(dates[2]);
+		year = std::atoi(dates[0].c_str());
+		month = std::atoi(dates[1].c_str());
+		day = std::atoi(dates[2].c_str());
 	} catch (const std::exception &e) {
-		std::cerr << "Error: Cannot convert to int (checkDate)" << std::endl;
+		(void)e;
+		std::cerr << "Error: parsing date" << std::endl;
 		return false;
 	}
 	if (year < 1000 || year > 9999) {
-		throw std::logic_error("Error: Year has to be XXXX");
+		// std::cerr << "Error: Year has to be XXXX" << std::endl;
 		return false;
 	}
 	if (month < 1 || month > 12) {
-		throw std::logic_error("Error: Invalid month");
+		// std::cerr << "Error: Invalid month" << std::endl;
 		return false;
 	}
 	if (day < 1 || day > 31) {
-		throw std::logic_error("Error: Invalid day");
+		// std::cerr << "Error: Invalid day" << std::endl;
 		return false;
 	}
 	if ((day == 31) && (month == 4 || month == 6 || month == 9 || month == 11)) {
-		throw std::logic_error("Error: Invalid format of day");
+		// std::cerr << "Error: Invalid format of day" << std::endl;
 		return false;
 	}
 	if (year % 4 == 0 && ((year % 100 != 0 ) || (year % 400 == 0))) {
 		if (month == 2 && day > 29) {
-			throw std::logic_error("Error: Invalid format of month (feb, leap year)");
+			// std::cerr << "Error: Invalid format of month (feb, leap year)" << std::endl;
 			return false;
 		}
 	} else if (month == 2 && day > 28) {
-		throw std::logic_error("Error: Invalid format of month (feb, normal year)");
+		// std::cerr << "Error: Invalid format of month (feb, normal year)" << std::endl;
 		return false;
 	}
 	return true;
@@ -185,13 +188,18 @@ bool	Btc::checkValue(std::string infoVal) {
 	float value;
 
 	try {
-		value = std::atof(infoVal);
+		value = std::atof(infoVal.c_str());
 	} catch (const std::exception &e) {
-		throw logic_error("Cannot convert value");
+		(void)e;
+		std::cerr << "Cannot convert value." << std::endl;
 		return false;
 	}
-	if (value < 0 || value > 1000) {
-		throw std::logic_error("Invalid value");
+	if (value < 0) {
+		std::cerr << "Error: not a positive number." << std::endl;
+		return false;
+	}
+	if (value > 1000) {
+		std::cerr << "Error: too large a number." << std::endl;
 		return false;
 	}
 	return true;
@@ -199,11 +207,10 @@ bool	Btc::checkValue(std::string infoVal) {
 
 bool	Btc::checkValidity(std::string infoDate, std::string infoVal) {
 	if (checkDate(infoDate) == false) {
-		std::cerr << "Error: error found in date format" << std::endl;
+		std::cerr << "Error: bad input =>  " << infoDate << std::endl;
 		return false;
 	}
 	if (checkValue(infoVal) == false) {
-		std::cerr << "Error: error found in value format" << std::endl;
 		return false;
 	}
 	return true;
@@ -221,23 +228,28 @@ void	Btc::readInput(std::string inputPath) {
 	}
 	// index of line
 	int lineNum = 0;
-	try {
-		while (getline(inputFile, line)) {
-			if (lineNum == 0) {
-				lineNum = 1;
-				continue ;
-			}
-			std::vector<std::string> lineInfo = splitStr(line, '|');
-			std::map<std::string, float>::iterator it = this->data.upper_bound(normalizeLine(lineInfo[0]));
-			if (it != data.end()) { // making pair data
-				std::pair<std::string, float> p = *(--it);
-			}
-			if (checkValidity(lineInfo[0], lineInfo[1]) == false) {
-				throw std::logic_error("Error: error found");
-			}
-			std::cout << lineInfo[0] << "=>" << lineInfo[1] << "=" << std::atof(lineInfo[1].c_str()) * p.second << std::endl;
+	while (getline(inputFile, line)) {
+		if (lineNum == 0) {
+			lineNum = 1;
+			continue ;
 		}
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << std::endl;
+		std::vector<std::string> lineInfo = this->splitStr(line, '|');
+		if (lineInfo[1].length() == 0 || lineInfo.size() < 2) {
+			std::cerr << "Error: bad input => " << lineInfo[0] << std::endl;
+			continue ;
+		}
+		std::map<std::string, float>::iterator it = this->data.upper_bound(normalizeLine(lineInfo[0]));
+		if (it != this->data.end()) { // making pair data
+			std::pair<std::string, float> p = *(--it);
+			try {
+				if (checkValidity(lineInfo[0], lineInfo[1]) == false) {
+					continue ;
+				}
+				else
+					std::cout << lineInfo[0] << "=>" << lineInfo[1] << " = " << std::atof(lineInfo[1].c_str()) * p.second << std::endl;
+			} catch (const std::exception &e) {
+				std::cerr << e.what() << std::endl;
+			}
+		}
 	}
 }
