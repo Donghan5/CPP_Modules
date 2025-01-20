@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 00:51:32 by donghank          #+#    #+#             */
-/*   Updated: 2024/12/22 00:51:33 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/20 11:34:53 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main(void) {
 	// increment part
 	std::cout << "====== This is increment test ======" << std::endl;
 	try {
-		// Bureaucrat	bureauCrat("John", 4);
+		Bureaucrat	bureauCrat("John", 4);
 
-		Bureaucrat	bureauCrat("John", 1);
+		// Bureaucrat	bureauCrat("John", 1); // exception test
 		std::cout << "-- before increment operation --" << std::endl;
 		std::cout << bureauCrat << std::endl;
 

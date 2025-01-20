@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 00:51:48 by donghank          #+#    #+#             */
-/*   Updated: 2024/12/22 00:51:49 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/20 11:37:57 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void) {
 	// Multiple Form tests
 	std::cout << "====== Multiple Form tests ======" << std::endl;
 	try {
-		std::cout << "This one to create grade sign 0" << std::endl;
+		std::cout << "This one to create grade sign 0 (exception)" << std::endl;
 		Form f("KE113", 0, 1);
 	}
 	catch (const std::exception &e) {
@@ -37,7 +37,7 @@ int main(void) {
 	}
 	std::cout << std::endl;
 	try {
-		std::cout << "This one to create grade sign 151" << std::endl;
+		std::cout << "This one to create grade sign 151 (exception)" << std::endl;
 		Form f("KA132", 151, 1);
 	}
 	catch (const std::exception &e){
@@ -53,7 +53,7 @@ int main(void) {
 	}
 	std::cout << std::endl;
 	try {
-		std::cout << "This one to create grade exec 151" << std::endl;
+		std::cout << "This one to create grade exec 151 (exception)" << std::endl;
 		Form f("SS212", 1, 151);
 	}
 	catch (const std::exception &e) {
@@ -71,7 +71,7 @@ int main(void) {
 	}
 	std::cout << "=================================" << std::endl;
 
-	std::cout << "======= With Bureaucrat 2 =======" << std::endl;
+	std::cout << "======= With Bureaucrat 2 (exception) =======" << std::endl;
 	try {
 		Bureaucrat	Thor("Thor", 150);
 		Form		f("LS123", 1, 1);

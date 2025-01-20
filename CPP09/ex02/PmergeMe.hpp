@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/20 00:47:18 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/20 13:13:59 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ class PmergeMe {
 	private:
 		std::string	_argLine;
 		int	_argCount;
+		std::deque<int>	inputDeque;
+		std::list<int>	inputList;
 		PmergeMe();
 
 		// default function to stock the values
 		void validateInput(std::string argLine);
-		void stockInput(int argCount, int value);
+		void stockInput(int argCount, std::string argLine);
 
 	public:
 		PmergeMe(int argCount, std::string argLine);
@@ -51,8 +53,14 @@ class PmergeMe {
 		void	sortDequeValues(std::deque<int> &arr);
 		void	sortListValues(std::list<int> &arr);
 
-		void	showResults(void);
+		void	showResults(int argCount, std::deque<int> inputDeque, std::list<int> inputList);
 
+		void	play(int argCount, std::string argLine);
+		// Exception
+		class InvalidInputException: public std::exception {
+			public:
+				const char *what() const throw();
+		};
 };
 
 #endif
