@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 12:39:56 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/10 14:42:44 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:39:14 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ const char	*ScalarConverter::ConvertUnknownExceptions::what(void) const throw() 
 	Constructor and destructor with copy assignement
 */
 ScalarConverter::ScalarConverter() {
-	std::cout << "Default constructor ScalarConverter has been called" << std::endl;
+	// std::cout << "Default constructor ScalarConverter has been called" << std::endl;
 	this->_c = '\0';
 	this->_n = 0;
 	this->_d = 0.0;
@@ -30,12 +30,12 @@ ScalarConverter::ScalarConverter() {
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter &rhs) {
-	std::cout << "Copy constructor of ScalarConverter has been called" << std::endl;
+	// std::cout << "Copy constructor of ScalarConverter has been called" << std::endl;
 	*this = rhs;
 }
 
 ScalarConverter::~ScalarConverter() {
-	std::cout << "Destructor of ScalarConverter has been called" << std::endl;
+	// std::cout << "Destructor of ScalarConverter has been called" << std::endl;
 }
 
 /*

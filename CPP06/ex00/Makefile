@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Target executable name
-NAME = ex00
+NAME = convert
 
 # Source files
 SRCS = main.cpp Convert.cpp

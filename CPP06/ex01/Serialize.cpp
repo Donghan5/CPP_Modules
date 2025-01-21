@@ -6,14 +6,14 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 22:57:13 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/10 14:46:13 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:41:48 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serialize.hpp"
 
 Serializer::Serializer() {
-	std::cout << "Constructor has been called" << std::endl;
+	// std::cout << "Constructor has been called" << std::endl;
 }
 
 Serializer::Serializer(const Serializer &rhs) {
@@ -21,7 +21,7 @@ Serializer::Serializer(const Serializer &rhs) {
 }
 
 Serializer::~Serializer() {
-	std::cout << "Destructor has been called" << std::endl;
+	// std::cout << "Destructor has been called" << std::endl;
 }
 
 Serializer	&Serializer::operator=(const Serializer &rhs) {
