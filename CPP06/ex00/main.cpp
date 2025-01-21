@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 21:34:39 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/03 10:49:55 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:26:03 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ int	main(int argc, char **argv) {
 		std::cerr << "usage: ./ex00 value" << std::endl;
 		return 1;
 	}
-	ScalarConverter	c;
+	ScalarConverter	c(argv[1]);
 	try {
-		c.setStr(argv[1]);
 		c.convert();
 		std::cout << c << std::endl;
 	}

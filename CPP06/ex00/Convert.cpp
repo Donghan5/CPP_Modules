@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 12:39:56 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/21 12:39:14 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:34:09 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ const char	*ScalarConverter::ConvertUnknownExceptions::what(void) const throw() 
 /*
 	Constructor and destructor with copy assignement
 */
-ScalarConverter::ScalarConverter() {
+ScalarConverter::ScalarConverter(std::string argLine) {
 	// std::cout << "Default constructor ScalarConverter has been called" << std::endl;
 	this->_c = '\0';
 	this->_n = 0;
 	this->_d = 0.0;
 	this->_f = 0.0f;
 	this->_impos = false;
+	setStr(argLine);
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter &rhs) {

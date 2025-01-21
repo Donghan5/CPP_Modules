@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimdonghan <kimdonghan@student.42.fr>      +#+  +:+       +#+        */
+/*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 12:27:07 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/04 16:48:20 by kimdonghan       ###   ########.fr       */
+/*   Updated: 2025/01/21 13:24:36 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ class ScalarConverter {
 		std::string	_str;
 		e_type		_type;
 
-	public:
 		ScalarConverter();
+
+	public:
+		ScalarConverter(std::string argLine);
 		ScalarConverter(const ScalarConverter &rhs);
 		~ScalarConverter();
 
