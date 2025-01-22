@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:22:27 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/10 14:48:37 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:13:07 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Base *generate(void) {
 /*
 	pointer identifier
 	dynamic_cast --> upcasting and downcasting (between parent class and child class)
+	the case fail --> return nullptr
 */
 void identify(Base* p) {
 	if (dynamic_cast<A* >(p))
@@ -48,6 +49,7 @@ void identify(Base* p) {
 
 /*
 	reference identifier
+	the case fail --> throw std::bad_cast
 */
 void identify(Base& p) {
 	Base base;
