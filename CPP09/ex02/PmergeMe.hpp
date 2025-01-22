@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/21 23:56:06 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:53:39 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 #include <deque>
 #include <list>
 #include <cstdlib>
+#include <cstring>
 
 class PmergeMe {
 	private:
-		std::string	_argLine;
 		int	_argCount;
+		std::string	_argLine;
 		std::deque<int>	inputDeque;
 		std::list<int>	inputList;
 		PmergeMe();
 
 		// default function to stock the values
-		void validateInput(std::string argLine);
-		void stockInput(int argCount, std::string argLine);
+		void stockInput(int argCount, char **argv);
 
 	public:
 		PmergeMe(int argCount, std::string argLine);
@@ -39,6 +39,7 @@ class PmergeMe {
 
 		PmergeMe &operator=(const PmergeMe &rhs);
 
+		int validateInput(char *argvs);
 		// to show the element which stock in container
 		// to show deque and list
 		template < typename T >
