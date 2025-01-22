@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:22:00 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/13 11:22:22 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:43:50 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Array {
 			return *this;
 		}
 
-		// treat index
+		// treat index check at school
 		T	&operator[](unsigned int i) const {
 			if (i < 0 || i >= _size) {
 				throw OutOfBoundException();
