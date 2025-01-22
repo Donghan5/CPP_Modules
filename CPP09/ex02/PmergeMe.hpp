@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/22 12:53:39 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/22 19:43:42 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@
 
 class PmergeMe {
 	private:
-		int	_argCount;
-		std::string	_argLine;
 		std::deque<int>	inputDeque;
 		std::list<int>	inputList;
 		PmergeMe();
@@ -33,13 +31,13 @@ class PmergeMe {
 		void stockInput(int argCount, char **argv);
 
 	public:
-		PmergeMe(int argCount, std::string argLine);
+		PmergeMe(int argc, char **argv);
 		PmergeMe(const PmergeMe &rhs);
 		~PmergeMe();
 
 		PmergeMe &operator=(const PmergeMe &rhs);
 
-		int validateInput(char *argvs);
+		int validateInput(std::string line);
 		// to show the element which stock in container
 		// to show deque and list
 		template < typename T >
@@ -55,9 +53,10 @@ class PmergeMe {
 		void	sortDequeValues(std::deque<int> &arr);
 		void	sortListValues(std::list<int> &arr);
 
-		void	showResults(int argCount, std::deque<int> inputDeque, std::list<int> inputList);
+		void	showResults(int argc, std::deque<int> inputDeque, std::list<int> inputList);
 
-		void	play(int argc, char **argv);
+		void	play(int argc);
+		
 		// Exception
 		class InvalidInputException: public std::exception {
 			public:

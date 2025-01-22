@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:01 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/22 12:54:24 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/22 20:20:56 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,18 @@ const char *PmergeMe::InvalidInputException::what() const throw() {
 		false --> invalid
 		value (int)
 */
-int	PmergeMe::validateInput(char *argvs) {
+int	PmergeMe::validateInput(std::string line) {
 	char	*endPtr = NULL;
-	double value = std::strtod(argvs, &endPtr);
-	if (value == 0.0 && !std::isdigit(argvs[0])) throw PmergeMe::InvalidInputException();
+	double value = std::strtod(line.c_str(), &endPtr);
+	if (value == 0.0 && !std::isdigit(line[0])) throw PmergeMe::InvalidInputException();
 	if (*endPtr && std::strcmp(endPtr, "f") != 0) throw PmergeMe::InvalidInputException();
-	return (value == static_cast<int>(value));
+	return (static_cast<int>(value));
 }
 
 // constructor
-PmergeMe::PmergeMe(int argCount, std::string argLine): _argCount(argCount), _argLine(argLine) {}
+PmergeMe::PmergeMe(int argc, char **argv) {
+	stockInput(argc, argv);
+}
 
 /*
 	stock all element
@@ -105,7 +107,7 @@ void	PmergeMe::sortListValues(std::list<int> &arr) {
 	}
 }
 
-void	PmergeMe::showResults(int argCount, std::deque<int> inputDeque, std::list<int> inputList) {
+void	PmergeMe::showResults(int argc, std::deque<int> inputDeque, std::list<int> inputList) {
 	std::cout << "Before: ";
 	display(inputDeque);
 	clock_t beforeDeque = clock();
@@ -120,13 +122,12 @@ void	PmergeMe::showResults(int argCount, std::deque<int> inputDeque, std::list<i
 
 	std::cout << "After: ";
 	display(inputDeque);
-	std::cout << "Time to process a range of " << argCount - 1<< " element with std::deque: " << timeDeque << " us" << std::endl;
-	std::cout << "Time to process a range of " << argCount - 1 << " element with std::list: " << timeList << " us" << std::endl;
+	std::cout << "Time to process a range of " << argc - 1<< " element with std::deque: " << timeDeque << " us" << std::endl;
+	std::cout << "Time to process a range of " << argc - 1 << " element with std::list: " << timeList << " us" << std::endl;
 }
 
-void	PmergeMe::play(int argc, char **argv) {
+void	PmergeMe::play(int argc) {
 	try {
-		stockInput(argc, argv);
 		showResults(argc, this->inputDeque, this->inputList);
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
