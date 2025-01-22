@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/20 13:13:59 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/21 23:56:06 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <sstream>
 #include <deque>
 #include <list>
+#include <cstdlib>
 
 class PmergeMe {
 	private:
@@ -55,7 +56,7 @@ class PmergeMe {
 
 		void	showResults(int argCount, std::deque<int> inputDeque, std::list<int> inputList);
 
-		void	play(int argCount, std::string argLine);
+		void	play(int argc, char **argv);
 		// Exception
 		class InvalidInputException: public std::exception {
 			public:

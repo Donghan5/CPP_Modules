@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:01 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/20 13:10:50 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/22 00:00:19 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,19 @@ void	PmergeMe::sortDequeValues(std::deque<int> &arr) {
 	@param arr: list array of element which from argument line
 */
 void	PmergeMe::sortListValues(std::list<int> &arr) {
-	std::list<int>::iterator it1, it2;
-
-	for (it1 != arr.begin() + 1; it != arr.end(); ++it1) {
+	std::list<int>::iterator it1;
+	it1 = arr.begin();
+	++it1;
+	for (; it1 != arr.end(); ++it1) {
 		int tmp = *it1;
-		it2 = it1;
-		while (it2 != arr.begin() && *(std::prev(it2))) {
-			*it2 = *(std::prev(it2));
-			std::advance(it2, -1);
+		std::list<int>::iterator it2 = it1;
+		while (it2 != arr.begin()) {
+			std::list<int>::iterator prev = it2;
+			--prev;
+			if (*prev <= tmp)
+				break ;
+			*it2 = prev;
+			it2 = prev;
 		}
 		*it2 = tmp;
 	}
@@ -104,7 +109,7 @@ void	PmergeMe::showResults(int argCount, std::deque<int> inputDeque, std::list<i
 
 	clock_t beforeList = clock();
 	this->sortListValues(inputList);
-	clock_t afterDeque = clock();
+	clock_t afterList = clock();
 	double timeList = static_cast<double>(afterList - beforeList) / CLOCKS_PER_SEC * 1000;
 
 	std::cout << "After: ";
@@ -113,10 +118,12 @@ void	PmergeMe::showResults(int argCount, std::deque<int> inputDeque, std::list<i
 	std::cout << "Time to process a range of " << argCount << " element with std::list: " << timeList << " us" << std::endl;
 }
 
-void	PmergeMe::play(int argCount, std::string argLine) {
+void	PmergeMe::play(int argc, char **argv) {
 	try {
-		stockInput(argCount, argLine);
-		showResults(argCount, this->inputDeque, this->inputList);
+		for (int i (1); i < argc; i++) {
+			stockInput(argc, argv[i]);
+		}
+		showResults(argc, this->inputDeque, this->inputList);
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}

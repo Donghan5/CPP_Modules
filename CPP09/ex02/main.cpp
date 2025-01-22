@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:07 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/20 13:14:13 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/21 23:49:17 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 		std::cerr << RED << "Error: Invalid argline" << END << std::endl;
 		return 1;
 	}
-	PmergeMe sorting(argc, argv);
+	PmergeMe sorting(argc, *argv);
 	sorting.play(argc, argv);
 	return 0;
 }
