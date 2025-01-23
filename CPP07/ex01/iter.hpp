@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 23:35:23 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/10 14:41:50 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:04:28 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 
 /*
 	template function
+	iterable the function
+	@param
+		arr: array type of typename
+		size: size of array
+		f: pointer function
 */
 template < typename T >
 void	iter(T *arr, size_t size, void(*f)(T &)) {

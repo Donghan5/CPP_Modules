@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 21:31:42 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/10 14:41:29 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:03:35 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 /*
 	introduction of template
 	goal: reutilization of the code
-	typename T --> the type temporary, it decide the type when complie
+	typename T --> the type temporary, it decide the type when it complie
 */
 template < typename T >
 void	swap(T &a, T &b) {

@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:10:50 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/11 15:12:40 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:21:29 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #define END "\033[0m"
 #define MAX_IDX 5
 
-int main(int, char**)
+int main()
 {
 	std::cout << RED << "========== START TEST ==========" << END << std::endl;
 
@@ -34,6 +34,7 @@ int main(int, char**)
 	}
 
 	Array<char> chars(MAX_IDX);
+	std::cout << "====================================" << std::endl;
 	std::cout << "Assignemnt chars....." << std::endl;
 	chars[0] = 'a';
 	chars[1] = 'b';
@@ -49,6 +50,7 @@ int main(int, char**)
 	std::cout << "========== Exception test (Intented error) ==========" << std::endl;
 	std::cout << RED << "Expected output: [Exception] Index is out of bound" << END << std::endl;
 	Array<int> numberException(5);
+	std::cout << "====================================" << std::endl;
 	std::cout << "Assignement numbers...." << std::endl;
 	for (int i (0); i < 5; i++) {
 		numberException[i] = rand();
