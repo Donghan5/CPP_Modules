@@ -6,17 +6,21 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:07:01 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/11 17:11:49 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/29 14:39:11 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
 #define RED "\033[31m"
+#define GREEN "\033[32m"
 #define END "\033[0m"
 
 int main(void) {
 	{
+		std::cout << GREEN << "\n=================================================================" << END << std::endl;
+		std::cout << GREEN << "|      NORMAL CASE TEST: all test must to work properly!!!      |" << END << std::endl;
+		std::cout << GREEN << "=================================================================" << END << std::endl;
 		std::set<int> set;
 		std::deque<int> deque;
 		std::list<int> list;
@@ -37,7 +41,7 @@ int main(void) {
 			}
 			std::cout << RED << "\nTry to find...." << END << std::endl;
 			std::set<int>::iterator set_it = easyfind(set, 0);
-			std::cout << "\nFound: " << *set_it << " followed by " << *(set_it++) << std::endl;
+			std::cout << GREEN << "\nFound: " << *set_it << " followed by " << *(++set_it) << END << std::endl;
 		} catch (const std::exception &e) {
 			std::cerr << "[Exception] " << e.what() << std::endl;
 		}
@@ -48,7 +52,7 @@ int main(void) {
 			}
 			std::cout << RED << "\nTry to find...." << END << std::endl;
 			std::deque<int>::iterator deque_it = easyfind(deque, 1);
-			std::cout << "\nFound: " << *deque_it << " followed by " << *(deque_it++) << std::endl;
+			std::cout << GREEN << "\nFound: " << *deque_it << " followed by " << *(++deque_it) << END << std::endl;
 		} catch (const std::exception &e) {
 			std::cerr << "[Exception] " << e.what() << std::endl;
 		}
@@ -59,7 +63,7 @@ int main(void) {
 			}
 			std::cout << RED << "\nTry to find...." << END << std::endl;
 			std::list<int>::iterator list_it = easyfind(list, 2);
-			std::cout << "\nFound: " << *list_it << " followed by " << *(list_it++) << std::endl;
+			std::cout << GREEN << "\nFound: " << *list_it << " followed by " << *(++list_it) << GREEN << std::endl;
 		} catch (const std::exception &e) {
 			std::cerr << "[Exception] " << e.what() << std::endl;
 		}
@@ -70,7 +74,7 @@ int main(void) {
 			}
 			std::cout << RED << "\nTry to find....." << END << std::endl;
 			std::vector<int>::iterator vector_it = easyfind(vector, 3);
-			std::cout << "\nFound: " << *vector_it << " followed by " << *(vector_it++) << std::endl;
+			std::cout << GREEN <<"\nFound: " << *vector_it << " followed by " << *(++vector_it) << END << std::endl;
 		} catch (const std::exception &e) {
 			std::cerr << "[Exception] " << e.what() << std::endl;
 		}
@@ -96,7 +100,7 @@ int main(void) {
 			}
 			std::cout << RED << "\nTry to find...." << END << std::endl;
 			std::set<double>::iterator set_it = easyfind(set, 0.0);
-			std::cout << "\nFound: " << *set_it << " followed by " << *(++set_it) << std::endl;
+			std::cout << GREEN << "\nFound: " << *set_it << " followed by " << *(++set_it) << END << std::endl;
 		} catch (const std::exception &e) {
 			std::cerr << "[Exception] " << e.what() << std::endl;
 		}
@@ -107,7 +111,7 @@ int main(void) {
 			}
 			std::cout << RED << "\nTry to find...." << END << std::endl;
 			std::deque<double>::iterator deque_it = easyfind(deque, 1.0);
-			std::cout << "\nFound: " << *deque_it << " followed by " << *(++deque_it) << std::endl;
+			std::cout << GREEN << "\nFound: " << *deque_it << " followed by " << *(++deque_it) << END << std::endl;
 		} catch (const std::exception &e) {
 			std::cerr << "[Exception] " << e.what() << std::endl;
 		}
@@ -118,7 +122,7 @@ int main(void) {
 			}
 			std::cout << RED << "\nTry to find...." << END << std::endl;
 			std::list<double>::iterator list_it = easyfind(list, 2.0);
-			std::cout << "\nFound: " << *list_it << " followed by " << *(++list_it) << std::endl;
+			std::cout << GREEN << "\nFound: " << *list_it << " followed by " << *(++list_it) << END << std::endl;
 		} catch (const std::exception &e) {
 			std::cerr << "[Exception] " << e.what() << std::endl;
 		}
@@ -129,7 +133,7 @@ int main(void) {
 			}
 			std::cout << RED << "\nTry to find....." << END << std::endl;
 			std::vector<double>::iterator vector_it = easyfind(vector, 3.0);
-			std::cout << "\nFound: " << *vector_it << " followed by " << *(++vector_it) << std::endl;
+			std::cout << GREEN << "\nFound: " << *vector_it << " followed by " << *(++vector_it) << END << std::endl;
 		} catch (const std::exception &e) {
 			std::cerr << "[Exception] " << e.what() << std::endl;
 		}
@@ -141,7 +145,7 @@ int main(void) {
 		std::vector<int> vector;
 
 		std::cout << RED << "\n=================================================================" << END << std::endl;
-		std::cout << RED << "|INTENDED EXCEPTION TEST: all test must to be return exception!!|" << END << std::endl;
+		std::cout << RED << "|  INTENDED ERROR TEST: all test must to be return exception!!  |" << END << std::endl;
 		std::cout << RED << "=================================================================" << END << std::endl;
 		std::cout << "=========== INT TEST ===========" << std::endl;
 		std::cout << "Assignement....." << std::endl;

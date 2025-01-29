@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:06:19 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/14 16:08:02 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/29 13:38:22 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Span {
 
 		int	sizeSpan(void) const;
 		int capacitySpan(void) const;
-		void addNumber(unsigned int N);
+		void addNumber(int addNum);
 		int shortestSpan(void) const;
 		int longestSpan(void) const;
 		//Exception
