@@ -6,12 +6,12 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:07:06 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/11 16:35:54 by donghank         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:25:05 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
-#define ESAYFIND_HPP
+#define EASYFIND_HPP
 #pragma once
 
 #include <iostream>
