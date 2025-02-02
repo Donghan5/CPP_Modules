@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 23:48:45 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/19 15:08:55 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/02 02:48:19 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 /*
 	Basic formula of RPN
 		num of value = num of operator + 1
+	@using container
+		stack: it is easy to stock by order LIFO
 */
 class Rpn {
 	private:

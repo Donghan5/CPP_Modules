@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 23:48:49 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/19 15:11:38 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/02 02:47:12 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,39 @@
 
 /*
 	Exception part
-	by output of subject, I didn't specify the error message
 */
 const char	*Rpn::InvalidInputException::what() const throw() {
 	return "Error(Invalid input)";
 }
 
 const char *Rpn::CalculateException::what() const throw() {
-	return "Error(Calculate)";
+	return "Error (Calculate)";
 }
 
 const char *Rpn::NotEnoughException::what() const throw() {
-	return "Error(Not enough)";
+	return "Error (Not enough)";
 }
 
 const char *Rpn::RuleRpnException::what() const throw() {
-	return "Error (Rule Rpn)"
+	return "Error (Rule Rpn)";
 }
 
+/*
+	To verify the operator
+	@param
+		op: operator (char to check)
+	@return
+		ascii value of each operators
+*/
 bool	Rpn::isOperator(char op) {
 	return (op == '+' || op == '-' || op == '*' || op == '/');
 }
 
+/*
+	To check the vaildate input
+	@param
+		line: input line to check the vaildity
+*/
 void	Rpn::validateInput(std::string line) {
 	if (line.size() == 1 && (line[0] == '+' || line[0] == '-' || line[0] == '/' || line[0] == '*'))
 		return ;
@@ -89,6 +100,9 @@ void	Rpn::splitStrStock(void) {
 	if (2 * this->numOfVal - this->_splitStr.size() != 1) throw Rpn::RuleRpnException();
 }
 
+/*
+	Calculate and store in the container
+*/
 void	Rpn::calculateStore(void) {
 	std::string tmp;
 	while (!this->_splitStr.empty()) {
@@ -113,10 +127,11 @@ void	Rpn::calculateStore(void) {
 	std::cout << _number.top() << std::endl; // showing top element
 }
 
-Rpn::Rpn(std::string strArg): _strArg(strArg), numOfVal(0) {}
+Rpn::Rpn(std::string strArg): _strArg(strArg), numOfVal(0) {} // constructor of type
 
-Rpn::Rpn(const Rpn &rhs) { *this = rhs; }
+Rpn::Rpn(const Rpn &rhs) { *this = rhs; } // copy constructor
 
+// copy assignement
 Rpn	&Rpn::operator=(const Rpn &rhs) {
 	if (this != &rhs) {
 		this->_number = rhs._number;
@@ -127,8 +142,11 @@ Rpn	&Rpn::operator=(const Rpn &rhs) {
 	return (*this);
 }
 
-Rpn::~Rpn() {}
+Rpn::~Rpn() {} // destructor
 
+/*
+	to print the result of the RPN equtation
+*/
 void	Rpn::printResultOfRpn(void) {
 	try {
 		splitStrStock();
