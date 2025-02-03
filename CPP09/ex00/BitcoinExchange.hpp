@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:37:57 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/16 13:52:54 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:50:33 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <map>
 #include <algorithm>
 #include <string>
-#include <vector>
 #include <utility>
 
 /*
@@ -48,7 +48,6 @@ class Btc {
 		void readInput(std::string inputPath); // input.txt
 
 		std::map<std::string, float> getData();
-		std::vector<std::string> splitStr(std::string str, char limit);
 		std::string	normalizeLine(std::string line);
 
 		//Exception

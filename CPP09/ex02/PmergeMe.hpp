@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/03 13:02:08 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/03 23:13:13 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,47 +16,49 @@
 
 #include <iostream>
 #include <sstream>
-#include <deque>
+#include <vector>
 #include <list>
 #include <cstdlib>
 #include <cstring>
-#include <cerrno>
+#include <ctime>
+#include <iomanip>
 
+// type definitions
+typedef std::vector<int> int_vector;
+
+template <typename Container>
 class PmergeMe {
+	public:
+		// type definitions --> flexibility
+		typedef typename Container::value_type value_type;
+		typedef typename Container::size_type size_type;
+		typedef std::pair <value_type, value_type> type_pair;
+		typedef std::vector <type_pair> pair_vector;
 	private:
-		std::deque<int>	inputDeque;
-		std::list<int>	inputList;
-		PmergeMe();
+		Container _data;
+		value_type _last;
+		double _time;
 
-		// default function to stock the values
-		void stockInput(int argCount, char **argv);
+		int_vector	generateIndexes(size_t n);
+		pair_vector generatePairs(Container &data);
+		void		sortPairs(pair_vector &pairs);
+		int			binarySearch(int target);
+		int			ftStoa(const char *str);
+		bool		isNum(const std::string &s);
 
 	public:
-		PmergeMe(int argc, char **argv);
+		PmergeMe();
+		explicit PmergeMe(char **data);
 		PmergeMe(const PmergeMe &rhs);
 		~PmergeMe();
 
 		PmergeMe &operator=(const PmergeMe &rhs);
 
-		int validateInput(std::string line);
-		// to show the element which stock in container
-		// to show deque and list
-		template < typename T >
-		void	display(const T &container) {
-			typename T::const_iterator it;
-			for (it = container.begin(); it != container.end(); ++it) {
-				std::cout << *it << " ";
-			}
-			std::cout << std::endl; // add the new line
-		}
 
 		// sorting algorithms
-		void	sortDequeValues(std::deque<int> &arr);
-		void	sortListValues(std::list<int> &arr);
-
-		void	showResults(int argc, std::deque<int> inputDeque, std::list<int> inputList);
-
-		void	play(int argc);
+		void	sort();
+		void	printData() const;
+		void	timeTable() const;
 
 		// Exception
 		class InvalidInputException: public std::exception {
