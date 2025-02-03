@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:01 by donghank          #+#    #+#             */
-/*   Updated: 2025/01/22 20:20:56 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:17:00 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 
 const char *PmergeMe::InvalidInputException::what() const throw() {
-	return "Error: Invalid input";
+	return "Error: positive integer or numbers separated by one argv";
 }
 
 /*
@@ -29,9 +29,13 @@ const char *PmergeMe::InvalidInputException::what() const throw() {
 */
 int	PmergeMe::validateInput(std::string line) {
 	char	*endPtr = NULL;
+	errno = 0;
 	double value = std::strtod(line.c_str(), &endPtr);
-	if (value == 0.0 && !std::isdigit(line[0])) throw PmergeMe::InvalidInputException();
-	if (*endPtr && std::strcmp(endPtr, "f") != 0) throw PmergeMe::InvalidInputException();
+	// case: empty line, 0 or negative integer and out of range
+	if (line.empty() || value < 1 || errno == ERANGE || *endPtr != '\0')
+		throw PmergeMe::InvalidInputException();
+	// only integer
+	if (value != static_cast<int>(value)) throw PmergeMe::InvalidInputException();
 	return (static_cast<int>(value));
 }
 
@@ -49,10 +53,7 @@ PmergeMe::PmergeMe(int argc, char **argv) {
 void	PmergeMe::stockInput(int argc, char **argv) {
 	for (int i (1); i < argc; i++) {
 		int value = this->validateInput(argv[i]);
-		if (value <= 0) {
-			std::cout << RED << "Error: Invalid input value: " << value << " :only postive value allowed" << END << std::endl;
-			exit(1);
-		}
+		if (value <= 0) throw PmergeMe::InvalidInputException();
 		this->inputDeque.push_back(value);
 		this->inputList.push_back(value);
 	}
