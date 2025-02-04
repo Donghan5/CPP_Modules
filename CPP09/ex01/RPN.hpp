@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 23:48:45 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/02 02:48:19 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:18:18 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,16 @@
 #include <sstream>
 
 /*
-	Basic formula of RPN
-		num of value = num of operator + 1
-	@using container
-		stack: it is easy to stock by order LIFO
+    RPN (Reverse Polish Notation) Explanation:
+    - RPN (Reverse Polish Notation) is a mathematical notation where operators follow their operands.
+
+    Basic formula in RPN:
+        Number of values = Number of operators + 1
+
+    @container used:
+        - stack: Follows LIFO (Last In, First Out), making it easy to store values in order.
 */
+
 class Rpn {
 	private:
 		std::stack<double> _number; // stack of the values which are converted

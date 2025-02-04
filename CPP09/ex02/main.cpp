@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:07 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/03 22:52:53 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:42:31 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // ./PmergeMe $(shuf -i 1-10000 -n 3000 | tr "\n" " ") test with 3000 numbers
 int main(int argc, char **argv) {
 	if (argc == 1) {
-		std::cerr << RED << "Error: Invalid argline" << END << std::endl;
+		std::cerr << RED << "Error: Invalid Command" << END << std::endl;
 		return 1;
 	}
 	try {

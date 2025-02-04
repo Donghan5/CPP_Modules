@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:38:00 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/03 20:53:12 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:14:35 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ static std::string	&eraseRightSpaces(std::string &str) {
 }
 
 /*
-	normalizing line -> remove spaces
+	normalize line
 	@param
-		line = to normalize
+		line = to be normalized
 	@return
 		normalized line
 */
@@ -115,7 +115,12 @@ Btc	&Btc::operator=(const Btc &rhs) {
 
 
 /*
-	boolean to check the date
+	check the format of date
+	@param
+		infoDate: information of date
+	@return
+		true: validate date
+		false: invalidate date
 */
 bool	Btc::checkDate(std::string infoDate) {
 	std::stringstream ss(infoDate);
@@ -135,7 +140,7 @@ bool	Btc::checkDate(std::string infoDate) {
 		std::cerr << "Error: parsing date" << std::endl;
 		return false;
 	}
-	if (year < 2009 || year > 2022) {
+	if (year < 2009 || year > 2022) { // in data.csv, the range of year is between 2009 and 2022
 		return false;
 	}
 	if (month < 1 || month > 12) {
@@ -148,7 +153,7 @@ bool	Btc::checkDate(std::string infoDate) {
 		return false;
 	}
 	if (year % 4 == 0 && ((year % 100 != 0 ) || (year % 400 == 0))) {
-		if (month == 2 && day > 29) {
+		if (month == 2 && day > 29) { // check leap year
 			return false;
 		}
 	} else if (month == 2 && day > 28) {
@@ -158,7 +163,12 @@ bool	Btc::checkDate(std::string infoDate) {
 }
 
 /*
-	boolean to check the value
+    Check if the given value is valid.
+    @param
+        infoVal: String to be validated.
+    @return
+        true - Valid value.
+        false - Invalid value.
 */
 bool	Btc::checkValue(std::string infoVal) {
 	float value = std::atof(infoVal.c_str());
@@ -173,6 +183,9 @@ bool	Btc::checkValue(std::string infoVal) {
 	return true;
 }
 
+/*
+	Check the validity of the input file
+*/
 bool	Btc::checkValidity(std::string infoDate, std::string infoVal) {
 	if (checkDate(infoDate) == false) {
 		std::cerr << "Error: bad input =>  " << infoDate << std::endl;
@@ -184,6 +197,9 @@ bool	Btc::checkValidity(std::string infoDate, std::string infoVal) {
 	return true;
 }
 
+/*
+	Read an input data
+*/
 void	Btc::readInput(std::string inputPath) {
 	std::ifstream inputFile(inputPath.c_str());
 	std::string	line;
