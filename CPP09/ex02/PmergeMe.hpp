@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/03 23:13:13 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 12:22:07 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@
 #include <ctime>
 #include <iomanip>
 
+
+/*
+	Using vector and list
+	vector: easy to expand and treat big amount.
+*/
 // type definitions
 typedef std::vector<int> int_vector;
 
@@ -48,7 +53,7 @@ class PmergeMe {
 
 	public:
 		PmergeMe();
-		explicit PmergeMe(char **data);
+		explicit PmergeMe(char **data); // not to change instantly
 		PmergeMe(const PmergeMe &rhs);
 		~PmergeMe();
 
