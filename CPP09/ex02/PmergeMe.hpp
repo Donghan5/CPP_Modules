@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/04 23:16:25 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:30:15 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@
 
 
 /*
-    Using vector and list for data storage:
-    - vector: Efficient for handling large datasets and random access.
-    - list: Optimized for frequent insertions and deletions.
+	Using vector and list for data storage:
+	- vector: Efficient for handling large datasets and random access.
+	- list: Optimized for frequent insertions and deletions.
 
-    Algorithm explanation:
-    1. Convert string input into integers.
-    2. Generate pairs of values, ensuring the larger value comes first.
-    3. Use the Jacobsthal sequence to determine the optimal insertion positions.
-    4. Insert values at their correct positions using binary search.
-    5. Ensure the final sequence remains sorted.
+	Algorithm explanation:
+		1. Convert string input into integers.
+		2. Generate pairs of values, ensuring the larger value comes first.
+		3. Use the Jacobsthal sequence to determine the optimal insertion positions.
+		4. Insert values at their correct positions using binary search.
+		5. Ensure the final sequence remains sorted.
 
 	Reason Binary search + Jacobsthal sequence + merge-inserction:
 		- The most efficient way to sort elements

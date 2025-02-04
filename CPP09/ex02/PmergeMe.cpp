@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:01 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/04 23:13:09 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:30:39 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,15 @@ void PmergeMe<Container>::sortPairs(pair_vector &pairs) {
 	3. Recursively search the right half.
 	4. Repeat until the target position is found.
 
+Example:
+	- Imagine the list [0, 1, 2, 3, 5, 6]
+	- The target value is 4
+	- In this case, left will increase its index, while right will decrease its index
+	- If the target is found in the middle, return it
+	- Otherwise, return the left value
+		- But why return left?
+			- Because left keeps increasing as the search progresses
+			- In this case: left becomes 5, right becomes 3. So, left always points to the correct insertion position
 	@param
 		target: The value to find.
 	@return
@@ -277,7 +286,7 @@ void PmergeMe<Container>::sort() {
 		return;
 	}
 
-	sortPairs(pairs);
+	sortPairs(pairs); // sorting pairs
 
 	_data.clear();
 
