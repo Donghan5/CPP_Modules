@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:37:57 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/03 20:50:33 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 12:21:06 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 /*
 	Description of the loadDataFromFile
 	- it reads data.csv file, it occur in constructor.
+	Using map container to stock key-value (date-value)
 */
 class Btc {
 	private:
