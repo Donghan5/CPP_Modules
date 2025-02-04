@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:01 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/04 21:22:22 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:13:09 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ template <typename Container>
 std::string getContainerName();
 
 template <>
-std::string getContainerName<std::vector<int> >() {
+std::string getContainerName<std::vector<int> >() { // getter
 	return "vector<int>";
 }
 
 template <>
-std::string getContainerName<std::list<int> >() {
+std::string getContainerName<std::list<int> >() { // getter
 	return "list<int>";
 
 }
@@ -56,7 +56,7 @@ PmergeMe<Container>::PmergeMe(const PmergeMe &rhs) { // copy constructor
 }
 
 template <typename Container>
-PmergeMe<Container> &PmergeMe<Container>::operator=(const PmergeMe &rhs) {
+PmergeMe<Container> &PmergeMe<Container>::operator=(const PmergeMe &rhs) { // copy assignement
 	if (this != &rhs) {
 		this->_data = rhs._data;
 		this->_last = rhs._last;
@@ -94,16 +94,15 @@ int PmergeMe<Container>::ftStoa(const char *str) {
 */
 template <typename Container>
 bool PmergeMe<Container>::isNum(const std::string &s) {
-	if (s.empty() || s[0] == '-') return false;
+	if (s.empty() || s[0] == '-') return false; // check negative integer case
 	size_t i = 0;
-	if (s[0] == '+' && s.length() == 1) return false;
-	else if (s[0] == '+') i++;
+	if (s[0] == '+' && s.length() == 1) return false; // check "+" case (just + in str)
+	else if (s[0] == '+') i++; // if meet +, increment
 	for (; i < s.length(); i++) {
 		if (!std::isdigit(s[i])) {
 			return false;
 		}
 	}
-
 	return true;
 }
 
@@ -213,9 +212,12 @@ int PmergeMe<Container>::binarySearch(int target) {
 	- The sequence grows similarly to the Fibonacci sequence but with a slight difference.
 	- Formula: J(n) = J(n - 1) + 2 * J(n - 2)
 	- Initial values: J(0) = 0, J(1) = 1
+	- Sequences: 0, 1, 1, 3, 5, ....
 
 	- Helps in determining optimal insertion positions.
 	- Used in merge-insertion sorting to efficiently insert values.
+	the reason of the lastJacobthalNumber is 2:
+		- initial values is 0 and 1, if we use 1, possibility same values and also bad sort
 */
 template <typename Container>
 int_vector PmergeMe<Container>::generateIndexes(size_t size) {
@@ -224,7 +226,7 @@ int_vector PmergeMe<Container>::generateIndexes(size_t size) {
 
 	jacobsthalSeq[0] = 0;
 	jacobsthalSeq[1] = 1;
-	int lastJacobsthalNumber = 2;
+	int lastJacobsthalNumber = 2; // store last element of jacobsthal sequence
 	for (size_t i = 2; indexes.size() < size; i++) {
 		jacobsthalSeq[i] = jacobsthalSeq[i - 1] + 2 * jacobsthalSeq[i - 2];
 

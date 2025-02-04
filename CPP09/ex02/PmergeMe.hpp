@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/04 21:01:22 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:16:25 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@
     3. Use the Jacobsthal sequence to determine the optimal insertion positions.
     4. Insert values at their correct positions using binary search.
     5. Ensure the final sequence remains sorted.
+
+	Reason Binary search + Jacobsthal sequence + merge-inserction:
+		- The most efficient way to sort elements
+		- The Jacobsthal sequence increases almost 2x, making it easy to locate positions using binary search
+		- In merge-insertion, we first create pairs before sorting
 */
 
 // type definitions
