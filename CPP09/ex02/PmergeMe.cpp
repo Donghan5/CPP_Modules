@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:01 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/05 14:54:35 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/05 22:48:59 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ template <typename Container>
 int PmergeMe<Container>::ftStoa(const char *str) {
 	std::istringstream ss(str);
 	int number;
-
 	ss >> number; // Convert the string
 	return (number);
 }
@@ -120,7 +119,7 @@ typename PmergeMe<Container>::pair_vector PmergeMe<Container>::generatePairs(Con
 	if (data.size() % 2 != 0) { // If the amount of data is odd, add one more data
 		this->_last = data.back();
 		data.pop_back();
-	}
+	} else _last = -1;
 
 	typename Container::iterator it = data.begin();
 	while (it != data.end()) {
@@ -130,14 +129,11 @@ typename PmergeMe<Container>::pair_vector PmergeMe<Container>::generatePairs(Con
 
 		if (second == data.end()) break;
 
-		if (*first < *second) {
-			std::swap(*first, *second);
-		}
+		if (*first < *second) std::swap(*first, *second);
 
 		pairs.push_back(std::make_pair(*first, *second));
 		std::advance(it, 2);
 	}
-
 	return pairs;
 }
 
@@ -229,26 +225,52 @@ int PmergeMe<Container>::binarySearch(int target) {
 		- initial values is 0 and 1, if we use 1, possibility same values and also bad sort
 */
 template <typename Container>
-int_vector PmergeMe<Container>::generateIndexes(size_t size) {
+int_vector PmergeMe<Container>::generateIndexes(size_t size) { // Using vector
 	int_vector indexes;
-	int jacobsthalSeq[size + 1];
+	std::vector<int> jacobsthalSeq;
 
-	jacobsthalSeq[0] = 0;
-	jacobsthalSeq[1] = 1;
-	int lastJacobsthalNumber = 2; // store last element of jacobsthal sequence
+	jacobsthalSeq.push_back(0);
+	jacobsthalSeq.push_back(1);
+
+	int lastJacobsthalNumber = 2;
 	for (size_t i = 2; indexes.size() < size; i++) {
-		jacobsthalSeq[i] = jacobsthalSeq[i - 1] + 2 * jacobsthalSeq[i - 2];
+		int nextJacobsthal = jacobsthalSeq[i - 1] + 2 * jacobsthalSeq[i - 2];
+		jacobsthalSeq.push_back(nextJacobsthal);
 
-		// push the jacobsthal num to sequence
-		i != 2 ? indexes.push_back(jacobsthalSeq[i]) : (void)0;
+		if (i > 2) indexes.push_back(nextJacobsthal);
 
-		for (int j = jacobsthalSeq[i] - 1; j > lastJacobsthalNumber; j--)
+		for (int j = nextJacobsthal - 1; j > lastJacobsthalNumber; j--) {
 			indexes.push_back(j);
-
-		lastJacobsthalNumber = jacobsthalSeq[i];
+		}
+		lastJacobsthalNumber = nextJacobsthal;
 	}
 	return indexes;
 }
+
+/*
+	Using index version
+*/
+// template <typename Container>
+// int_vector PmergeMe<Container>::generateIndexes(size_t size) {
+// 	int_vector indexes;
+// 	int jacobsthalSeq[size + 1];
+
+// 	jacobsthalSeq[0] = 0;
+// 	jacobsthalSeq[1] = 1;
+// 	int lastJacobsthalNumber = 2; // store last element of jacobsthal sequence
+// 	for (size_t i = 2; indexes.size() < size; i++) {
+// 		jacobsthalSeq[i] = jacobsthalSeq[i - 1] + 2 * jacobsthalSeq[i - 2];
+
+// 		// push the jacobsthal num to sequence
+// 		i != 2 ? indexes.push_back(jacobsthalSeq[i]) : (void)0;
+
+// 		for (int j = jacobsthalSeq[i] - 1; j > lastJacobsthalNumber; j--)
+// 			indexes.push_back(j);
+
+// 		lastJacobsthalNumber = jacobsthalSeq[i];
+// 	}
+// 	return indexes;
+// }
 
 /*
 	Showing the datas
@@ -293,26 +315,31 @@ void PmergeMe<Container>::sort() {
 	_data.push_back(pairs[0].second);
 
 	for (size_type i = 0; i < pairs.size(); i++) {
-		if (_data.back() != pairs[i].first)
-			_data.push_back(pairs[i].first);
+		int value = pairs[i].first;
+		size_t index = binarySearch(value);
+		typename Container::iterator insertIt = _data.begin();
+		std::advance(insertIt, index); // increment per index
+		_data.insert(insertIt, value);
 	}
 
 	for (size_t i = 0; i < insertionIndexes.size(); i++) {
 		if (size_t(insertionIndexes[i] - 1) >= pairs.size()) continue ;
 
-		int index = binarySearch(pairs[insertionIndexes[i] - 1].second);
+		int value = pairs[insertionIndexes[i] - 1].second;
+		size_t index = binarySearch(value);
 
 		// if the case of the list --> advance
 		typename Container::iterator insertIt = _data.begin();
 		std::advance(insertIt, index);
 
-		_data.insert(insertIt, pairs[insertionIndexes[i] - 1].second);
+		_data.insert(insertIt, value);
 	}
 
 	if (_last != -1) {
-		int index = binarySearch(_last);
+		size_t index = binarySearch(_last);
 		typename Container::iterator insertIt = _data.begin();
 		std::advance(insertIt, index);
+
 		_data.insert(insertIt, _last);
 	}
 

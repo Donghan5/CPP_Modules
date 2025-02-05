@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:07 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/04 22:52:54 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/05 22:24:04 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 	try {
 		PmergeMe<std::vector<int> > v(argv + 1);
 
-		std::cout << "Before:\t";
+		std::cout << RED << "Before:\t" << END;
 		v.printData();
 
 		v.sort();
@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
 		PmergeMe<std::list<int> > list(argv + 1);
 		list.sort();
 
-		std::cout << "After:\t";
+		std::cout << RED << "After:\t" << END;
 
 		list.printData();
 
