@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:04 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/04 23:30:15 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/05 11:44:56 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class PmergeMe {
 		value_type _last;
 		double _time;
 
-		int_vector	generateIndexes(size_t n);
+		int_vector	generateIndexes(size_t size);
 		pair_vector generatePairs(Container &data);
 		void		sortPairs(pair_vector &pairs);
 		int			binarySearch(int target);
