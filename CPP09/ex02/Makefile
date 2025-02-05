@@ -37,5 +37,12 @@ fclean: clean
 re: fclean all
 	@echo "\033[0;31mRebuild project\033[0m"
 
+test: $(NAME)
+	@echo "List size?"; \
+	read SIZE; \
+	echo "Max number?"; \
+	read MAX; \
+	./$(NAME) `shuf -i 1-$$MAX -n $$SIZE | tr '\n' ' '`
+
 # Phony targets
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test

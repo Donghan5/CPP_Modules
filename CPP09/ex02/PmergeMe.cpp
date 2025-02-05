@@ -6,7 +6,7 @@
 /*   By: donghank <donghank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:16:01 by donghank          #+#    #+#             */
-/*   Updated: 2025/02/04 23:30:39 by donghank         ###   ########.fr       */
+/*   Updated: 2025/02/05 14:54:35 by donghank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -293,7 +293,8 @@ void PmergeMe<Container>::sort() {
 	_data.push_back(pairs[0].second);
 
 	for (size_type i = 0; i < pairs.size(); i++) {
-		_data.push_back(pairs[i].first);
+		if (_data.back() != pairs[i].first)
+			_data.push_back(pairs[i].first);
 	}
 
 	for (size_t i = 0; i < insertionIndexes.size(); i++) {
@@ -304,6 +305,7 @@ void PmergeMe<Container>::sort() {
 		// if the case of the list --> advance
 		typename Container::iterator insertIt = _data.begin();
 		std::advance(insertIt, index);
+
 		_data.insert(insertIt, pairs[insertionIndexes[i] - 1].second);
 	}
 
