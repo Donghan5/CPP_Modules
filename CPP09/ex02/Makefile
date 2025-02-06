@@ -1,6 +1,6 @@
 # Compiler and flags
 CC = c++
-CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Target executable name
 NAME = PmergeMe
